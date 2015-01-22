@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2540F81C1A71467A00AB4625 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2540F81B1A71467A00AB4625 /* main.m */; };
+		2540F81F1A71467A00AB4625 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2540F81E1A71467A00AB4625 /* AppDelegate.m */; };
+		2540F8221A71467A00AB4625 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2540F8211A71467A00AB4625 /* GameScene.m */; };
+		2540F8241A71467A00AB4625 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2540F8231A71467A00AB4625 /* GameScene.sks */; };
+		2540F8271A71467A00AB4625 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2540F8261A71467A00AB4625 /* GameViewController.m */; };
+		2540F82A1A71467A00AB4625 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2540F8281A71467A00AB4625 /* Main.storyboard */; };
+		2540F82C1A71467A00AB4625 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2540F82B1A71467A00AB4625 /* Images.xcassets */; };
+		2540F82F1A71467A00AB4625 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2540F82D1A71467A00AB4625 /* LaunchScreen.xib */; };
+		2540F83B1A71467A00AB4625 /* Henry___The_Lantern_of_FearsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2540F83A1A71467A00AB4625 /* Henry___The_Lantern_of_FearsTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2540F8351A71467A00AB4625 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2540F80E1A71467A00AB4625 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2540F8151A71467A00AB4625;
+			remoteInfo = "Henry & The Lantern of Fears";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2540F8161A71467A00AB4625 /* Henry & The Lantern of Fears.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Henry & The Lantern of Fears.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2540F81A1A71467A00AB4625 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2540F81B1A71467A00AB4625 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2540F81D1A71467A00AB4625 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2540F81E1A71467A00AB4625 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2540F8201A71467A00AB4625 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		2540F8211A71467A00AB4625 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		2540F8231A71467A00AB4625 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		2540F8251A71467A00AB4625 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		2540F8261A71467A00AB4625 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		2540F8291A71467A00AB4625 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2540F82B1A71467A00AB4625 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2540F82E1A71467A00AB4625 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		2540F8341A71467A00AB4625 /* Henry & The Lantern of FearsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Henry & The Lantern of FearsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2540F8391A71467A00AB4625 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2540F83A1A71467A00AB4625 /* Henry___The_Lantern_of_FearsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Henry___The_Lantern_of_FearsTests.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2540F8131A71467A00AB4625 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2540F8311A71467A00AB4625 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2540F80D1A71467A00AB4625 = {
+			isa = PBXGroup;
+			children = (
+				2540F8181A71467A00AB4625 /* Henry & The Lantern of Fears */,
+				2540F8371A71467A00AB4625 /* Henry & The Lantern of FearsTests */,
+				2540F8171A71467A00AB4625 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2540F8171A71467A00AB4625 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2540F8161A71467A00AB4625 /* Henry & The Lantern of Fears.app */,
+				2540F8341A71467A00AB4625 /* Henry & The Lantern of FearsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2540F8181A71467A00AB4625 /* Henry & The Lantern of Fears */ = {
+			isa = PBXGroup;
+			children = (
+				2540F81D1A71467A00AB4625 /* AppDelegate.h */,
+				2540F81E1A71467A00AB4625 /* AppDelegate.m */,
+				2540F8201A71467A00AB4625 /* GameScene.h */,
+				2540F8211A71467A00AB4625 /* GameScene.m */,
+				2540F8231A71467A00AB4625 /* GameScene.sks */,
+				2540F8251A71467A00AB4625 /* GameViewController.h */,
+				2540F8261A71467A00AB4625 /* GameViewController.m */,
+				2540F8281A71467A00AB4625 /* Main.storyboard */,
+				2540F82B1A71467A00AB4625 /* Images.xcassets */,
+				2540F82D1A71467A00AB4625 /* LaunchScreen.xib */,
+				2540F8191A71467A00AB4625 /* Supporting Files */,
+			);
+			path = "Henry & The Lantern of Fears";
+			sourceTree = "<group>";
+		};
+		2540F8191A71467A00AB4625 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2540F81A1A71467A00AB4625 /* Info.plist */,
+				2540F81B1A71467A00AB4625 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2540F8371A71467A00AB4625 /* Henry & The Lantern of FearsTests */ = {
+			isa = PBXGroup;
+			children = (
+				2540F83A1A71467A00AB4625 /* Henry___The_Lantern_of_FearsTests.m */,
+				2540F8381A71467A00AB4625 /* Supporting Files */,
+			);
+			path = "Henry & The Lantern of FearsTests";
+			sourceTree = "<group>";
+		};
+		2540F8381A71467A00AB4625 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2540F8391A71467A00AB4625 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2540F8151A71467A00AB4625 /* Henry & The Lantern of Fears */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2540F83E1A71467A00AB4625 /* Build configuration list for PBXNativeTarget "Henry & The Lantern of Fears" */;
+			buildPhases = (
+				2540F8121A71467A00AB4625 /* Sources */,
+				2540F8131A71467A00AB4625 /* Frameworks */,
+				2540F8141A71467A00AB4625 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Henry & The Lantern of Fears";
+			productName = "Henry & The Lantern of Fears";
+			productReference = 2540F8161A71467A00AB4625 /* Henry & The Lantern of Fears.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2540F8331A71467A00AB4625 /* Henry & The Lantern of FearsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2540F8411A71467A00AB4625 /* Build configuration list for PBXNativeTarget "Henry & The Lantern of FearsTests" */;
+			buildPhases = (
+				2540F8301A71467A00AB4625 /* Sources */,
+				2540F8311A71467A00AB4625 /* Frameworks */,
+				2540F8321A71467A00AB4625 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2540F8361A71467A00AB4625 /* PBXTargetDependency */,
+			);
+			name = "Henry & The Lantern of FearsTests";
+			productName = "Henry & The Lantern of FearsTests";
+			productReference = 2540F8341A71467A00AB4625 /* Henry & The Lantern of FearsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2540F80E1A71467A00AB4625 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = ABHI;
+				TargetAttributes = {
+					2540F8151A71467A00AB4625 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					2540F8331A71467A00AB4625 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 2540F8151A71467A00AB4625;
+					};
+				};
+			};
+			buildConfigurationList = 2540F8111A71467A00AB4625 /* Build configuration list for PBXProject "Henry & The Lantern of Fears" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2540F80D1A71467A00AB4625;
+			productRefGroup = 2540F8171A71467A00AB4625 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2540F8151A71467A00AB4625 /* Henry & The Lantern of Fears */,
+				2540F8331A71467A00AB4625 /* Henry & The Lantern of FearsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2540F8141A71467A00AB4625 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2540F82F1A71467A00AB4625 /* LaunchScreen.xib in Resources */,
+				2540F82C1A71467A00AB4625 /* Images.xcassets in Resources */,
+				2540F8241A71467A00AB4625 /* GameScene.sks in Resources */,
+				2540F82A1A71467A00AB4625 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2540F8321A71467A00AB4625 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2540F8121A71467A00AB4625 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2540F8271A71467A00AB4625 /* GameViewController.m in Sources */,
+				2540F81F1A71467A00AB4625 /* AppDelegate.m in Sources */,
+				2540F8221A71467A00AB4625 /* GameScene.m in Sources */,
+				2540F81C1A71467A00AB4625 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2540F8301A71467A00AB4625 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2540F83B1A71467A00AB4625 /* Henry___The_Lantern_of_FearsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2540F8361A71467A00AB4625 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2540F8151A71467A00AB4625 /* Henry & The Lantern of Fears */;
+			targetProxy = 2540F8351A71467A00AB4625 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2540F8281A71467A00AB4625 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2540F8291A71467A00AB4625 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2540F82D1A71467A00AB4625 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2540F82E1A71467A00AB4625 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2540F83C1A71467A00AB4625 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2540F83D1A71467A00AB4625 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2540F83F1A71467A00AB4625 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Henry & The Lantern of Fears/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2540F8401A71467A00AB4625 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Henry & The Lantern of Fears/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2540F8421A71467A00AB4625 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Henry & The Lantern of FearsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Henry & The Lantern of Fears.app/Henry & The Lantern of Fears";
+			};
+			name = Debug;
+		};
+		2540F8431A71467A00AB4625 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Henry & The Lantern of FearsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Henry & The Lantern of Fears.app/Henry & The Lantern of Fears";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2540F8111A71467A00AB4625 /* Build configuration list for PBXProject "Henry & The Lantern of Fears" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2540F83C1A71467A00AB4625 /* Debug */,
+				2540F83D1A71467A00AB4625 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2540F83E1A71467A00AB4625 /* Build configuration list for PBXNativeTarget "Henry & The Lantern of Fears" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2540F83F1A71467A00AB4625 /* Debug */,
+				2540F8401A71467A00AB4625 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2540F8411A71467A00AB4625 /* Build configuration list for PBXNativeTarget "Henry & The Lantern of FearsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2540F8421A71467A00AB4625 /* Debug */,
+				2540F8431A71467A00AB4625 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2540F80E1A71467A00AB4625 /* Project object */;
+}
