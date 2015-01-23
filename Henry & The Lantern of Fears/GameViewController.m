@@ -43,6 +43,8 @@
     
     // Create and configure the scene.
     GameScene *scene = [GameScene unarchiveFromFile:@"GameScene"];
+    scene.size = skView.frame.size;
+    scene.anchorPoint = CGPointMake(0.5, 0.5);
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.

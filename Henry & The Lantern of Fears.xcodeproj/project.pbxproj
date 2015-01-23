@@ -14,8 +14,12 @@
 		2540F8271A71467A00AB4625 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2540F8261A71467A00AB4625 /* GameViewController.m */; };
 		2540F82A1A71467A00AB4625 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2540F8281A71467A00AB4625 /* Main.storyboard */; };
 		2540F82C1A71467A00AB4625 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2540F82B1A71467A00AB4625 /* Images.xcassets */; };
-		2540F82F1A71467A00AB4625 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2540F82D1A71467A00AB4625 /* LaunchScreen.xib */; };
 		2540F83B1A71467A00AB4625 /* Henry___The_Lantern_of_FearsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2540F83A1A71467A00AB4625 /* Henry___The_Lantern_of_FearsTests.m */; };
+		25FCDB411A714AF600B842F2 /* Henry.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FCDB401A714AF600B842F2 /* Henry.m */; };
+		25FCDB471A716B1E00B842F2 /* rightButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 25FCDB461A716B1E00B842F2 /* rightButton.png */; };
+		25FCDB4F1A717BF000B842F2 /* leftButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 25FCDB4E1A717BF000B842F2 /* leftButton.png */; };
+		25FCDB511A718DAA00B842F2 /* jumpButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 25FCDB501A718DAA00B842F2 /* jumpButton.png */; };
+		25FCDB531A72746800B842F2 /* x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25FCDB521A72746800B842F2 /* x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,10 +45,15 @@
 		2540F8261A71467A00AB4625 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		2540F8291A71467A00AB4625 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2540F82B1A71467A00AB4625 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		2540F82E1A71467A00AB4625 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2540F8341A71467A00AB4625 /* Henry & The Lantern of FearsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Henry & The Lantern of FearsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2540F8391A71467A00AB4625 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2540F83A1A71467A00AB4625 /* Henry___The_Lantern_of_FearsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Henry___The_Lantern_of_FearsTests.m"; sourceTree = "<group>"; };
+		25FCDB3F1A714AF600B842F2 /* Henry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Henry.h; path = ../Henry.h; sourceTree = "<group>"; };
+		25FCDB401A714AF600B842F2 /* Henry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Henry.m; path = ../Henry.m; sourceTree = "<group>"; };
+		25FCDB461A716B1E00B842F2 /* rightButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightButton.png; sourceTree = "<group>"; };
+		25FCDB4E1A717BF000B842F2 /* leftButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftButton.png; sourceTree = "<group>"; };
+		25FCDB501A718DAA00B842F2 /* jumpButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jumpButton.png; sourceTree = "<group>"; };
+		25FCDB521A72746800B842F2 /* x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = x.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +97,8 @@
 			children = (
 				2540F81D1A71467A00AB4625 /* AppDelegate.h */,
 				2540F81E1A71467A00AB4625 /* AppDelegate.m */,
+				25FCDB3F1A714AF600B842F2 /* Henry.h */,
+				25FCDB401A714AF600B842F2 /* Henry.m */,
 				2540F8201A71467A00AB4625 /* GameScene.h */,
 				2540F8211A71467A00AB4625 /* GameScene.m */,
 				2540F8231A71467A00AB4625 /* GameScene.sks */,
@@ -95,7 +106,6 @@
 				2540F8261A71467A00AB4625 /* GameViewController.m */,
 				2540F8281A71467A00AB4625 /* Main.storyboard */,
 				2540F82B1A71467A00AB4625 /* Images.xcassets */,
-				2540F82D1A71467A00AB4625 /* LaunchScreen.xib */,
 				2540F8191A71467A00AB4625 /* Supporting Files */,
 			);
 			path = "Henry & The Lantern of Fears";
@@ -104,6 +114,10 @@
 		2540F8191A71467A00AB4625 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				25FCDB521A72746800B842F2 /* x.png */,
+				25FCDB501A718DAA00B842F2 /* jumpButton.png */,
+				25FCDB4E1A717BF000B842F2 /* leftButton.png */,
+				25FCDB461A716B1E00B842F2 /* rightButton.png */,
 				2540F81A1A71467A00AB4625 /* Info.plist */,
 				2540F81B1A71467A00AB4625 /* main.m */,
 			);
@@ -207,10 +221,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2540F82F1A71467A00AB4625 /* LaunchScreen.xib in Resources */,
+				25FCDB471A716B1E00B842F2 /* rightButton.png in Resources */,
 				2540F82C1A71467A00AB4625 /* Images.xcassets in Resources */,
+				25FCDB531A72746800B842F2 /* x.png in Resources */,
 				2540F8241A71467A00AB4625 /* GameScene.sks in Resources */,
+				25FCDB4F1A717BF000B842F2 /* leftButton.png in Resources */,
 				2540F82A1A71467A00AB4625 /* Main.storyboard in Resources */,
+				25FCDB511A718DAA00B842F2 /* jumpButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +248,7 @@
 				2540F8271A71467A00AB4625 /* GameViewController.m in Sources */,
 				2540F81F1A71467A00AB4625 /* AppDelegate.m in Sources */,
 				2540F8221A71467A00AB4625 /* GameScene.m in Sources */,
+				25FCDB411A714AF600B842F2 /* Henry.m in Sources */,
 				2540F81C1A71467A00AB4625 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,14 +278,6 @@
 				2540F8291A71467A00AB4625 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2540F82D1A71467A00AB4625 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2540F82E1A71467A00AB4625 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -422,6 +432,7 @@
 				2540F8401A71467A00AB4625 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2540F8411A71467A00AB4625 /* Build configuration list for PBXNativeTarget "Henry & The Lantern of FearsTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +441,7 @@
 				2540F8431A71467A00AB4625 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
