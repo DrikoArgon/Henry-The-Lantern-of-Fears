@@ -293,6 +293,12 @@ static const uint32_t ENEMY_CATEGORY = 0x1 << 2;
         [_bat attackPlayer:_henry];
     }
     
+    [_world enumerateChildNodesWithName:@"lanternLightParticle" usingBlock:^(SKNode *node, BOOL *stop) {
+        if(_bat.position.x - node.position.x < 50){
+            [_bat removeFromParent];
+            
+        }
+    }];
     
 }
 -(void)centerOnNode:(SKNode *)node
