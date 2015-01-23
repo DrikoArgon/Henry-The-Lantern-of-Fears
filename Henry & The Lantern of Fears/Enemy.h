@@ -9,5 +9,9 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface Enemy : SKSpriteNode
+@property (strong, nonatomic) NSString *imageName;
+@property (nonatomic) int life;
+@property (nonatomic) int score;
+
 
 @end

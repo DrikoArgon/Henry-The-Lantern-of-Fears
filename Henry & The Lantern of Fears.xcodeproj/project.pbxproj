@@ -21,6 +21,7 @@
 		25FCDB511A718DAA00B842F2 /* jumpButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 25FCDB501A718DAA00B842F2 /* jumpButton.png */; };
 		25FCDB531A72746800B842F2 /* x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25FCDB521A72746800B842F2 /* x.png */; };
 		25FCDB561A72905C00B842F2 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FCDB551A72905C00B842F2 /* Enemy.m */; };
+		25FCDB591A72935B00B842F2 /* Bat.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FCDB581A72935B00B842F2 /* Bat.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		25FCDB521A72746800B842F2 /* x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = x.png; sourceTree = "<group>"; };
 		25FCDB541A72905C00B842F2 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
 		25FCDB551A72905C00B842F2 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
+		25FCDB571A72935B00B842F2 /* Bat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bat.h; sourceTree = "<group>"; };
+		25FCDB581A72935B00B842F2 /* Bat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bat.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				2540F8281A71467A00AB4625 /* Main.storyboard */,
 				25FCDB541A72905C00B842F2 /* Enemy.h */,
 				25FCDB551A72905C00B842F2 /* Enemy.m */,
+				25FCDB571A72935B00B842F2 /* Bat.h */,
+				25FCDB581A72935B00B842F2 /* Bat.m */,
 				2540F82B1A71467A00AB4625 /* Images.xcassets */,
 				2540F8191A71467A00AB4625 /* Supporting Files */,
 			);
@@ -256,6 +261,7 @@
 				2540F8221A71467A00AB4625 /* GameScene.m in Sources */,
 				25FCDB411A714AF600B842F2 /* Henry.m in Sources */,
 				2540F81C1A71467A00AB4625 /* main.m in Sources */,
+				25FCDB591A72935B00B842F2 /* Bat.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

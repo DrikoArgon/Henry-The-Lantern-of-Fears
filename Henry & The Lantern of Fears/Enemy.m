@@ -10,4 +10,18 @@
 
 @implementation Enemy
 
++(id)enemy:(NSString *)imageName withLife:(int)life withScore:(int)score
+{
+    
+    Enemy *enemy = [Enemy spriteNodeWithImageNamed:imageName];
+    
+    enemy.life = life;
+    enemy.score = score;
+    
+    
+    return enemy;
+}
+
+
+
 @end
