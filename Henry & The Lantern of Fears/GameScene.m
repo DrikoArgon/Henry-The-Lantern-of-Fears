@@ -27,6 +27,8 @@
     BOOL _jumping;
     NSMutableArray *_enemies;
     Bat *_bat;
+    BOOL _lanternLit;
+    BOOL _flipped;
     
     
 }
@@ -80,6 +82,7 @@ static const uint32_t ENEMY_CATEGORY = 0x1 << 2;
     _bat.physicsBody.categoryBitMask = ENEMY_CATEGORY;
     _bat.physicsBody.collisionBitMask = 0;
     _bat.physicsBody.contactTestBitMask = PLAYER_CATEGORY;
+    _bat.shadowCastBitMask = 0x1 << 3;
     
     [_world addChild:_bat];
     //Inserting Hud Controls
@@ -109,6 +112,14 @@ static const uint32_t ENEMY_CATEGORY = 0x1 << 2;
     
     [_HUD addChild:jumpButton];
     
+    SKSpriteNode *lanternButton = [SKSpriteNode spriteNodeWithImageNamed:@"lantern"];
+    lanternButton.size = CGSizeMake(60, 60);
+    lanternButton.name = @"lanternButton";
+    lanternButton.position = CGPointMake(self.frame.size.width * 0.5 - 3 * lanternButton.frame.size.width * 0.5,
+                                         -self.frame.size.height * 0.5 + lanternButton.frame.size.height * 0.5);
+    
+    [_HUD addChild:lanternButton];
+    
     // Inserting Life and Score
     SKSpriteNode *life = [SKSpriteNode spriteNodeWithColor:[UIColor blackColor] size:CGSizeMake(40, 40)];
     SKSpriteNode *leftEye = [SKSpriteNode spriteNodeWithColor:[UIColor whiteColor] size:CGSizeMake(5, 5)];
@@ -120,7 +131,8 @@ static const uint32_t ENEMY_CATEGORY = 0x1 << 2;
     [life addChild:rightEye];
     
     [life setScale:0.5];
-    life.position = CGPointMake(-self.frame.size.width * 0.5 + life.frame.size.width * 0.5 + 10, self.frame.size.height * 0.5 - life.frame.size.height * 0.5 - 10);
+    life.position = CGPointMake(-self.frame.size.width * 0.5 + life.frame.size.width * 0.5 + 10,
+                                self.frame.size.height * 0.5 - life.frame.size.height * 0.5 - 10);
     
     [_HUD addChild:life];
     
@@ -165,6 +177,7 @@ static const uint32_t ENEMY_CATEGORY = 0x1 << 2;
             
             if(_henry.xScale == -1){
                 _henry.xScale = 1;
+                _flipped = NO;
             }
             [_henry walkRight];
         }
@@ -174,6 +187,7 @@ static const uint32_t ENEMY_CATEGORY = 0x1 << 2;
             
             if(_henry.xScale == 1){
                 _henry.xScale = -1;
+                _flipped = YES;
             }
             [_henry walkLeft];
         }
@@ -184,18 +198,14 @@ static const uint32_t ENEMY_CATEGORY = 0x1 << 2;
                 [_henry jump];
             }
         }
+        else if([n.name isEqualToString:@"lanternButton"]){
+            
+            _lanternLit = YES;
+            [_henry pickLantern:_world isFlipped:_flipped];
+            
+        }
         
     }
-    
-}
-
--(void)start
-{
-    self.isStarted = YES;
-    
-    
-    [_henry start];
-
     
 }
 
@@ -215,7 +225,15 @@ static const uint32_t ENEMY_CATEGORY = 0x1 << 2;
         _leftButtonPressed = NO;
         [_henry removeActionForKey:@"walkLeft"];
     }
-    
+    if(_lanternLit){
+        _lanternLit = NO;
+        [_world enumerateChildNodesWithName:@"lanternLightParticle" usingBlock:^(SKNode *node, BOOL *stop) {
+            [node removeFromParent];
+        }];
+        [_world enumerateChildNodesWithName:@"lanternLight" usingBlock:^(SKNode *node, BOOL *stop) {
+            [node removeFromParent];
+        }];
+    }
 }
 -(void)gameOver
 {

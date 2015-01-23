@@ -14,5 +14,5 @@
 -(void)walkRight;
 -(void)walkLeft;
 -(void)jump;
--(void)start;
+-(void)pickLantern:(SKNode *)world isFlipped:(BOOL)flipped;
 @end

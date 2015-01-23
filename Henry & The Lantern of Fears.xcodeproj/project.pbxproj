@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2506278E1A72B0E200325CEE /* Bat.m in Sources */ = {isa = PBXBuildFile; fileRef = 2506278D1A72B0E200325CEE /* Bat.m */; };
+		250627921A72EB5200325CEE /* lantern.png in Resources */ = {isa = PBXBuildFile; fileRef = 250627911A72EB5200325CEE /* lantern.png */; };
+		250627951A72F54300325CEE /* lanternLight.sks in Resources */ = {isa = PBXBuildFile; fileRef = 250627931A72F54300325CEE /* lanternLight.sks */; };
+		250627961A72F54300325CEE /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 250627941A72F54300325CEE /* spark.png */; };
 		2540F81C1A71467A00AB4625 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2540F81B1A71467A00AB4625 /* main.m */; };
 		2540F81F1A71467A00AB4625 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2540F81E1A71467A00AB4625 /* AppDelegate.m */; };
 		2540F8221A71467A00AB4625 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2540F8211A71467A00AB4625 /* GameScene.m */; };
@@ -38,6 +41,9 @@
 /* Begin PBXFileReference section */
 		2506278C1A72B0E200325CEE /* Bat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bat.h; sourceTree = "<group>"; };
 		2506278D1A72B0E200325CEE /* Bat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bat.m; sourceTree = "<group>"; };
+		250627911A72EB5200325CEE /* lantern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lantern.png; sourceTree = "<group>"; };
+		250627931A72F54300325CEE /* lanternLight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = lanternLight.sks; sourceTree = "<group>"; };
+		250627941A72F54300325CEE /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		2540F8161A71467A00AB4625 /* Henry & The Lantern of Fears.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Henry & The Lantern of Fears.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2540F81A1A71467A00AB4625 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2540F81B1A71467A00AB4625 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -85,6 +91,8 @@
 		2540F80D1A71467A00AB4625 = {
 			isa = PBXGroup;
 			children = (
+				250627931A72F54300325CEE /* lanternLight.sks */,
+				250627941A72F54300325CEE /* spark.png */,
 				2540F8181A71467A00AB4625 /* Henry & The Lantern of Fears */,
 				2540F8371A71467A00AB4625 /* Henry & The Lantern of FearsTests */,
 				2540F8171A71467A00AB4625 /* Products */,
@@ -123,6 +131,7 @@
 		2540F8191A71467A00AB4625 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				250627911A72EB5200325CEE /* lantern.png */,
 				25FCDB5D1A72A7A000B842F2 /* bat.png */,
 				25FCDB521A72746800B842F2 /* x.png */,
 				25FCDB501A718DAA00B842F2 /* jumpButton.png */,
@@ -242,7 +251,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				250627961A72F54300325CEE /* spark.png in Resources */,
 				25FCDB471A716B1E00B842F2 /* rightButton.png in Resources */,
+				250627951A72F54300325CEE /* lanternLight.sks in Resources */,
 				25FCDB5E1A72A7A000B842F2 /* bat.png in Resources */,
 				2540F82C1A71467A00AB4625 /* Images.xcassets in Resources */,
 				25FCDB531A72746800B842F2 /* x.png in Resources */,
@@ -250,6 +261,7 @@
 				25FCDB4F1A717BF000B842F2 /* leftButton.png in Resources */,
 				2540F82A1A71467A00AB4625 /* Main.storyboard in Resources */,
 				25FCDB511A718DAA00B842F2 /* jumpButton.png in Resources */,
+				250627921A72EB5200325CEE /* lantern.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

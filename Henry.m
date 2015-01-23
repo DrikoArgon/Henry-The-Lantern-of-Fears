@@ -50,13 +50,34 @@
     
     
 }
--(void)start
+-(void)pickLantern:(SKNode *)world isFlipped:(BOOL)flipped
 {
     
-    SKAction *moveRight = [SKAction repeatActionForever:[SKAction moveByX:1 y:0 duration:0.10]];
-    [self runAction:moveRight];
+    NSString *lanternLightEmmiterPath = [[NSBundle mainBundle] pathForResource:@"lanternLight" ofType:@"sks"];
+    SKEmitterNode *lanternLightEmmitter = [NSKeyedUnarchiver unarchiveObjectWithFile:lanternLightEmmiterPath];
     
+    if(!flipped){
     
+    lanternLightEmmitter.position = CGPointMake(self.position.x + self.frame.size.width,
+                                                self.position.y);
+    }
+    else{
+        lanternLightEmmitter.position = CGPointMake(self.position.x - self.frame.size.width,
+                                                    self.position.y);
+        
+    }
+    lanternLightEmmitter.name = @"lanternLightParticle";
+    
+    SKLightNode *lanternLight = [[SKLightNode alloc] init];
+    lanternLight.categoryBitMask = 0x1 << 3;
+    lanternLight.falloff = 0.1;
+    lanternLight.ambientColor = [UIColor whiteColor];
+    lanternLight.lightColor = lanternLightEmmitter.particleColor;
+    lanternLight.shadowColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:0.0 alpha:0.3];
+    lanternLight.name = @"lanternLight";
+    
+    [lanternLightEmmitter addChild:lanternLight];
+    [world addChild:lanternLightEmmitter];
 }
 
 
