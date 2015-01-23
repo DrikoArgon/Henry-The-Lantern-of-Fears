@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2506278E1A72B0E200325CEE /* Bat.m in Sources */ = {isa = PBXBuildFile; fileRef = 2506278D1A72B0E200325CEE /* Bat.m */; };
 		2540F81C1A71467A00AB4625 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2540F81B1A71467A00AB4625 /* main.m */; };
 		2540F81F1A71467A00AB4625 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2540F81E1A71467A00AB4625 /* AppDelegate.m */; };
 		2540F8221A71467A00AB4625 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2540F8211A71467A00AB4625 /* GameScene.m */; };
@@ -21,7 +22,7 @@
 		25FCDB511A718DAA00B842F2 /* jumpButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 25FCDB501A718DAA00B842F2 /* jumpButton.png */; };
 		25FCDB531A72746800B842F2 /* x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25FCDB521A72746800B842F2 /* x.png */; };
 		25FCDB561A72905C00B842F2 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FCDB551A72905C00B842F2 /* Enemy.m */; };
-		25FCDB591A72935B00B842F2 /* Bat.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FCDB581A72935B00B842F2 /* Bat.m */; };
+		25FCDB5E1A72A7A000B842F2 /* bat.png in Resources */ = {isa = PBXBuildFile; fileRef = 25FCDB5D1A72A7A000B842F2 /* bat.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2506278C1A72B0E200325CEE /* Bat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bat.h; sourceTree = "<group>"; };
+		2506278D1A72B0E200325CEE /* Bat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bat.m; sourceTree = "<group>"; };
 		2540F8161A71467A00AB4625 /* Henry & The Lantern of Fears.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Henry & The Lantern of Fears.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2540F81A1A71467A00AB4625 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2540F81B1A71467A00AB4625 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -58,8 +61,7 @@
 		25FCDB521A72746800B842F2 /* x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = x.png; sourceTree = "<group>"; };
 		25FCDB541A72905C00B842F2 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
 		25FCDB551A72905C00B842F2 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
-		25FCDB571A72935B00B842F2 /* Bat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bat.h; sourceTree = "<group>"; };
-		25FCDB581A72935B00B842F2 /* Bat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bat.m; sourceTree = "<group>"; };
+		25FCDB5D1A72A7A000B842F2 /* bat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bat.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,11 +113,8 @@
 				2540F8251A71467A00AB4625 /* GameViewController.h */,
 				2540F8261A71467A00AB4625 /* GameViewController.m */,
 				2540F8281A71467A00AB4625 /* Main.storyboard */,
-				25FCDB541A72905C00B842F2 /* Enemy.h */,
-				25FCDB551A72905C00B842F2 /* Enemy.m */,
-				25FCDB571A72935B00B842F2 /* Bat.h */,
-				25FCDB581A72935B00B842F2 /* Bat.m */,
 				2540F82B1A71467A00AB4625 /* Images.xcassets */,
+				25FCDB5C1A729C3700B842F2 /* Enemies */,
 				2540F8191A71467A00AB4625 /* Supporting Files */,
 			);
 			path = "Henry & The Lantern of Fears";
@@ -124,6 +123,7 @@
 		2540F8191A71467A00AB4625 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				25FCDB5D1A72A7A000B842F2 /* bat.png */,
 				25FCDB521A72746800B842F2 /* x.png */,
 				25FCDB501A718DAA00B842F2 /* jumpButton.png */,
 				25FCDB4E1A717BF000B842F2 /* leftButton.png */,
@@ -149,6 +149,17 @@
 				2540F8391A71467A00AB4625 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		25FCDB5C1A729C3700B842F2 /* Enemies */ = {
+			isa = PBXGroup;
+			children = (
+				25FCDB541A72905C00B842F2 /* Enemy.h */,
+				25FCDB551A72905C00B842F2 /* Enemy.m */,
+				2506278C1A72B0E200325CEE /* Bat.h */,
+				2506278D1A72B0E200325CEE /* Bat.m */,
+			);
+			name = Enemies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25FCDB471A716B1E00B842F2 /* rightButton.png in Resources */,
+				25FCDB5E1A72A7A000B842F2 /* bat.png in Resources */,
 				2540F82C1A71467A00AB4625 /* Images.xcassets in Resources */,
 				25FCDB531A72746800B842F2 /* x.png in Resources */,
 				2540F8241A71467A00AB4625 /* GameScene.sks in Resources */,
@@ -261,7 +273,7 @@
 				2540F8221A71467A00AB4625 /* GameScene.m in Sources */,
 				25FCDB411A714AF600B842F2 /* Henry.m in Sources */,
 				2540F81C1A71467A00AB4625 /* main.m in Sources */,
-				25FCDB591A72935B00B842F2 /* Bat.m in Sources */,
+				2506278E1A72B0E200325CEE /* Bat.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

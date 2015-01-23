@@ -7,7 +7,34 @@
 //
 
 #import "Bat.h"
+#import "Henry.h"
 
 @implementation Bat
+
++(id)bat
+{
+    
+    SKSpriteNode *bat = [Bat spriteNodeWithImageNamed:@"bat"];
+    
+    bat.size = CGSizeMake(61, 38);
+    
+    bat.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:15];
+    bat.physicsBody.affectedByGravity = NO;
+    bat.physicsBody.allowsRotation = NO;
+    
+    
+    return bat;
+}
+
+-(void)attackPlayer:(Henry *)henry
+{
+    
+    SKAction *chasePlayer = [SKAction moveTo:henry.position duration:3];
+    [self runAction:chasePlayer];
+    
+    
+    
+}
+
 
 @end

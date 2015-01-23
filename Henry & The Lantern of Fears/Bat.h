@@ -6,8 +6,11 @@
 //  Copyright (c) 2015 ABHI. All rights reserved.
 //
 
-#import "Enemy.h"
+#import <SpriteKit/SpriteKit.h>
+#import "Henry.h"
 
-@interface Bat : Enemy
+@interface Bat : SKSpriteNode
 
++(id)bat;
+-(void)attackPlayer:(Henry *)henry;
 @end

@@ -8,6 +8,7 @@
 
 #import "GameScene.h"
 #import "Henry.h"
+#import "Bat.h"
 
 @interface GameScene ()
 
@@ -24,6 +25,8 @@
     BOOL _rightButtonPressed;
     BOOL _leftButtonPressed;
     BOOL _jumping;
+    NSMutableArray *_enemies;
+    Bat *_bat;
     
     
 }
@@ -33,8 +36,6 @@ static const uint32_t PLAYER_CATEGORY = 0x1 << 1;
 
 -(void)didMoveToView:(SKView *)view {
     /* Setup your scene here */
-    
-    //Defining Inicial Values
     
     
     
@@ -72,6 +73,12 @@ static const uint32_t PLAYER_CATEGORY = 0x1 << 1;
     _henry.physicsBody.contactTestBitMask = GROUND_CATEGORY;
     [_world addChild:_henry];
     
+    //Inserting Enemy
+    _bat = [Bat bat];
+    _bat.position = CGPointMake(300, 30);
+    
+    
+    [_world addChild:_bat];
     //Inserting Hud Controls
     
     //Buttons
@@ -129,6 +136,7 @@ static const uint32_t PLAYER_CATEGORY = 0x1 << 1;
     
     [_HUD addChild:_lifeLabel];
     
+    //Defining Inicial Values
     self.numberOfLives = 3;
 }
 
@@ -255,6 +263,11 @@ static const uint32_t PLAYER_CATEGORY = 0x1 << 1;
             [self gameOver];
         }
     }];
+    
+    if (_bat.position.x - _henry.position.x < 100 ) {
+        [_bat attackPlayer:_henry];
+    }
+    
     
 }
 -(void)centerOnNode:(SKNode *)node

@@ -7,6 +7,7 @@
 //
 
 #import "Enemy.h"
+#import "Henry.h"
 
 @implementation Enemy
 
@@ -22,6 +23,20 @@
     return enemy;
 }
 
+-(void)die
+{
+        [self removeFromParent];
+    
+}
+-(void)receiveDamage
+{
+    self.life--;
+    
+    if (self.life <= 0) {
+        [self die];
+    }
+    
+}
 
 
 @end
