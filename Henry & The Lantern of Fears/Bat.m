@@ -29,7 +29,7 @@
 -(void)attackPlayer:(Henry *)henry
 {
     
-    SKAction *chasePlayer = [SKAction moveTo:henry.position duration:3];
+    SKAction *chasePlayer = [SKAction moveTo:henry.position duration:2];
     [self runAction:chasePlayer];
     
     

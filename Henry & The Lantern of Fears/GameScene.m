@@ -33,6 +33,7 @@
 
 static const uint32_t GROUND_CATEGORY = 0x1;
 static const uint32_t PLAYER_CATEGORY = 0x1 << 1;
+static const uint32_t ENEMY_CATEGORY = 0x1 << 2;
 
 -(void)didMoveToView:(SKView *)view {
     /* Setup your scene here */
@@ -76,7 +77,9 @@ static const uint32_t PLAYER_CATEGORY = 0x1 << 1;
     //Inserting Enemy
     _bat = [Bat bat];
     _bat.position = CGPointMake(300, 30);
-    
+    _bat.physicsBody.categoryBitMask = ENEMY_CATEGORY;
+    _bat.physicsBody.collisionBitMask = 0;
+    _bat.physicsBody.contactTestBitMask = PLAYER_CATEGORY;
     
     [_world addChild:_bat];
     //Inserting Hud Controls
@@ -244,6 +247,10 @@ static const uint32_t PLAYER_CATEGORY = 0x1 << 1;
     if(firstBody.categoryBitMask == GROUND_CATEGORY && secondBody.categoryBitMask == PLAYER_CATEGORY)
     {
         _jumping = NO;
+    }
+    else if(firstBody.categoryBitMask == PLAYER_CATEGORY && secondBody.categoryBitMask == ENEMY_CATEGORY){
+        [_henry removeFromParent];
+        [self gameOver];
     }
     
 }
