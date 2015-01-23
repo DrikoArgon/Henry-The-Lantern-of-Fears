@@ -20,6 +20,7 @@
 		25FCDB4F1A717BF000B842F2 /* leftButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 25FCDB4E1A717BF000B842F2 /* leftButton.png */; };
 		25FCDB511A718DAA00B842F2 /* jumpButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 25FCDB501A718DAA00B842F2 /* jumpButton.png */; };
 		25FCDB531A72746800B842F2 /* x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25FCDB521A72746800B842F2 /* x.png */; };
+		25FCDB561A72905C00B842F2 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FCDB551A72905C00B842F2 /* Enemy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		25FCDB4E1A717BF000B842F2 /* leftButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftButton.png; sourceTree = "<group>"; };
 		25FCDB501A718DAA00B842F2 /* jumpButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jumpButton.png; sourceTree = "<group>"; };
 		25FCDB521A72746800B842F2 /* x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = x.png; sourceTree = "<group>"; };
+		25FCDB541A72905C00B842F2 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
+		25FCDB551A72905C00B842F2 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				2540F8251A71467A00AB4625 /* GameViewController.h */,
 				2540F8261A71467A00AB4625 /* GameViewController.m */,
 				2540F8281A71467A00AB4625 /* Main.storyboard */,
+				25FCDB541A72905C00B842F2 /* Enemy.h */,
+				25FCDB551A72905C00B842F2 /* Enemy.m */,
 				2540F82B1A71467A00AB4625 /* Images.xcassets */,
 				2540F8191A71467A00AB4625 /* Supporting Files */,
 			);
@@ -245,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25FCDB561A72905C00B842F2 /* Enemy.m in Sources */,
 				2540F8271A71467A00AB4625 /* GameViewController.m in Sources */,
 				2540F81F1A71467A00AB4625 /* AppDelegate.m in Sources */,
 				2540F8221A71467A00AB4625 /* GameScene.m in Sources */,

@@ -122,9 +122,10 @@ static const uint32_t PLAYER_CATEGORY = 0x1 << 1;
     [_HUD addChild:xSeparator];
     
     _lifeLabel = [SKLabelNode labelNodeWithFontNamed:@"DIN Alternate"];
-    _lifeLabel.fontSize = 15;
+    _lifeLabel.fontColor = [UIColor blackColor];
+    _lifeLabel.fontSize = 25;
     
-    _lifeLabel.position = CGPointMake(xSeparator.position.x + _lifeLabel.frame.size.width * 0.5, life.position.y);
+    _lifeLabel.position = CGPointMake(xSeparator.position.x + 15 , xSeparator.position.y - 5);
     
     [_HUD addChild:_lifeLabel];
     
@@ -207,8 +208,8 @@ static const uint32_t PLAYER_CATEGORY = 0x1 << 1;
 }
 -(void)gameOver
 {
-    
-    
+    _isGameOver = YES;
+    self.numberOfLives--;
     
     
 }
@@ -251,7 +252,7 @@ static const uint32_t PLAYER_CATEGORY = 0x1 << 1;
         {
             
             [node removeFromParent];
-            _isGameOver = YES;
+            [self gameOver];
         }
     }];
     
