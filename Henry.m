@@ -27,6 +27,7 @@
     henry.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:henry.size];
     henry.physicsBody.restitution = 0.0;
     henry.physicsBody.allowsRotation  = NO;
+    henry.shadowCastBitMask = 0x1 << 31;
     return henry;
 }
 -(void)walkRight
@@ -69,7 +70,7 @@
     lanternLightEmmitter.name = @"lanternLightParticle";
     
     SKLightNode *lanternLight = [[SKLightNode alloc] init];
-    lanternLight.categoryBitMask = 0x1 << 3;
+    lanternLight.categoryBitMask = 0x1 << 31;
     lanternLight.falloff = 0.1;
     lanternLight.ambientColor = [UIColor whiteColor];
     lanternLight.lightColor = lanternLightEmmitter.particleColor;

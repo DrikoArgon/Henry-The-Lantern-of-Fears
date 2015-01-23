@@ -28,7 +28,7 @@
     NSMutableArray *_enemies;
     Bat *_bat;
     BOOL _lanternLit;
-    BOOL _flipped;
+    BOOL _flipped; //If Henry's image is flipped to walk left
     
     
 }
@@ -36,6 +36,7 @@
 static const uint32_t GROUND_CATEGORY = 0x1;
 static const uint32_t PLAYER_CATEGORY = 0x1 << 1;
 static const uint32_t ENEMY_CATEGORY = 0x1 << 2;
+static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
 
 -(void)didMoveToView:(SKView *)view {
     /* Setup your scene here */
@@ -82,7 +83,7 @@ static const uint32_t ENEMY_CATEGORY = 0x1 << 2;
     _bat.physicsBody.categoryBitMask = ENEMY_CATEGORY;
     _bat.physicsBody.collisionBitMask = 0;
     _bat.physicsBody.contactTestBitMask = PLAYER_CATEGORY;
-    _bat.shadowCastBitMask = 0x1 << 3;
+    _bat.shadowCastBitMask = LIGHT_CATEGORY;
     
     [_world addChild:_bat];
     //Inserting Hud Controls
@@ -200,9 +201,10 @@ static const uint32_t ENEMY_CATEGORY = 0x1 << 2;
         }
         else if([n.name isEqualToString:@"lanternButton"]){
             
+            if(!_isGameOver){
             _lanternLit = YES;
             [_henry pickLantern:_world isFlipped:_flipped];
-            
+            }
         }
         
     }
