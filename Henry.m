@@ -13,14 +13,31 @@
 +(id)henry
 {
     
-    Henry *henry = [Henry spriteNodeWithColor:[UIColor blackColor] size:CGSizeMake(40, 40)];
-    SKSpriteNode *leftEye = [SKSpriteNode spriteNodeWithColor:[UIColor whiteColor] size:CGSizeMake(5, 5)];
-    leftEye.position = CGPointMake(-3, 8);
-    [henry addChild:leftEye];
+    Henry *henry = [Henry spriteNodeWithImageNamed:@"henrymenine"];
+    henry.size = CGSizeMake(39, 60);
+//    SKSpriteNode *leftEye = [SKSpriteNode spriteNodeWithColor:[UIColor whiteColor] size:CGSizeMake(5, 5)];
+//    leftEye.position = CGPointMake(-3, 8);
+//    [henry addChild:leftEye];
+//    
+//    SKSpriteNode *rightEye = [SKSpriteNode spriteNodeWithColor:[UIColor whiteColor] size:CGSizeMake(5, 5)];
+//    rightEye.position = CGPointMake(13, 8);
+//    [henry addChild:rightEye];
     
-    SKSpriteNode *rightEye = [SKSpriteNode spriteNodeWithColor:[UIColor whiteColor] size:CGSizeMake(5, 5)];
-    rightEye.position = CGPointMake(13, 8);
-    [henry addChild:rightEye];
+    SKSpriteNode *lightBlocker = [SKSpriteNode spriteNodeWithColor:[UIColor grayColor] size:CGSizeMake(1,40)];
+    lightBlocker.zPosition = -3;
+    lightBlocker.position = CGPointMake(henry.frame.size.width * 1.5, henry.position.y);
+    lightBlocker.shadowCastBitMask = 0x1 << 30;
+    [henry addChild:lightBlocker];
+    
+//    SKSpriteNode *lightBlocker2 = [SKSpriteNode spriteNodeWithColor:[UIColor grayColor] size:CGSizeMake(40,40)];
+//    lightBlocker2.position = CGPointMake(40, -henry.frame.size.height);
+//    lightBlocker2.shadowCastBitMask = 0x1 << 30;
+//    [henry addChild:lightBlocker2];
+//
+//    SKSpriteNode *lightBlocker3 = [SKSpriteNode spriteNodeWithColor:[UIColor grayColor] size:CGSizeMake(40,40)];
+//    lightBlocker3.position = CGPointMake(40, henry.frame.size.height *2);
+//    lightBlocker3.shadowCastBitMask = 0x1 << 31;
+//    [henry addChild:lightBlocker3];
     
     henry.name = @"henry";
     
@@ -28,6 +45,8 @@
     henry.physicsBody.restitution = 0.0;
     henry.physicsBody.allowsRotation  = NO;
     henry.shadowCastBitMask = 0x1 << 31;
+    
+    
     return henry;
 }
 -(void)walkRight
@@ -51,22 +70,15 @@
     
     
 }
--(void)pickLantern:(SKNode *)world isFlipped:(BOOL)flipped
+-(void)pickLantern
 {
     
     NSString *lanternLightEmmiterPath = [[NSBundle mainBundle] pathForResource:@"lanternLight" ofType:@"sks"];
     SKEmitterNode *lanternLightEmmitter = [NSKeyedUnarchiver unarchiveObjectWithFile:lanternLightEmmiterPath];
     
-    if(!flipped){
     
-    lanternLightEmmitter.position = CGPointMake(self.position.x + self.frame.size.width,
-                                                self.position.y);
-    }
-    else{
-        lanternLightEmmitter.position = CGPointMake(self.position.x - self.frame.size.width,
-                                                    self.position.y);
-        
-    }
+    lanternLightEmmitter.position = CGPointMake(self.frame.size.width,0);
+    
     lanternLightEmmitter.name = @"lanternLightParticle";
     
     SKLightNode *lanternLight = [[SKLightNode alloc] init];
@@ -78,7 +90,24 @@
     lanternLight.name = @"lanternLight";
     
     [lanternLightEmmitter addChild:lanternLight];
-    [world addChild:lanternLightEmmitter];
+    [self addChild:lanternLightEmmitter];
+    
+    
+    SKLightNode *fakeLanternLight = [[SKLightNode alloc] init];
+    fakeLanternLight.categoryBitMask = 0x1 << 30;
+    fakeLanternLight.falloff = 0.1;
+    fakeLanternLight.ambientColor = [UIColor whiteColor];
+    fakeLanternLight.lightColor = lanternLightEmmitter.particleColor;
+    fakeLanternLight.shadowColor = [[UIColor alloc] initWithRed:1.0 green:1.0 blue:1.0 alpha:0.3];
+    fakeLanternLight.name = @"fakeLanternLight";
+    
+    
+    fakeLanternLight.position = CGPointMake(-self.frame.size.width,0);
+    
+    
+    
+    [self addChild:fakeLanternLight];
+    
 }
 
 

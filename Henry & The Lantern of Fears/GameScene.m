@@ -9,6 +9,7 @@
 #import "GameScene.h"
 #import "Henry.h"
 #import "Bat.h"
+#import "BackgroundGenerator.h"
 
 @interface GameScene ()
 
@@ -20,13 +21,19 @@
 @implementation GameScene{
     
     SKNode *_world;
+    SKNode *_backgroundLayer;
     SKNode *_HUD;
+    
     Henry *_henry;
+    
+    BackgroundGenerator *_generator;
+    
+    NSMutableArray *_enemies;
+    Bat *_bat;
+    
     BOOL _rightButtonPressed;
     BOOL _leftButtonPressed;
     BOOL _jumping;
-    NSMutableArray *_enemies;
-    Bat *_bat;
     BOOL _lanternLit;
     BOOL _flipped; //If Henry's image is flipped to walk left
     
@@ -41,11 +48,18 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
 -(void)didMoveToView:(SKView *)view {
     /* Setup your scene here */
     
+   
     
     
     //Setting Delegate
     self.physicsWorld.contactDelegate = self;
    
+    //Creating background Layer
+    _backgroundLayer = [SKNode node];
+    _backgroundLayer.zPosition = -2;
+    [self addChild:_backgroundLayer];
+    
+    
     //Creating World ( Holds the player, the ground, the enemies, etc )
     _world = [SKNode node];
     [self addChild:_world];
@@ -63,12 +77,18 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
     ground.physicsBody.categoryBitMask = GROUND_CATEGORY;
     [_world addChild:ground];
     
-    SKSpriteNode *ground2 = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(self.frame.size.width, 100)];
-    ground2.position = CGPointMake(ground2.frame.size.width, -self.frame.size.height * 0.5 + ground2.frame.size.height * 0.5);
+    SKSpriteNode *ground2 = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(self.frame.size.width * 20, 100)];
+    ground2.position = CGPointMake(ground.frame.size.width, -self.frame.size.height * 0.5 + ground2.frame.size.height * 0.5);
     ground2.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:ground2.size];
     ground2.physicsBody.dynamic = NO;
     ground2.physicsBody.categoryBitMask = GROUND_CATEGORY;
     [_world addChild:ground2];
+    
+    //Creating Background
+    _generator = [BackgroundGenerator generateWithBackground:_backgroundLayer];
+    
+    [self addChild:_generator];
+    [_generator populate];
     
     //Inserting Player
     _henry = [Henry henry];
@@ -81,7 +101,7 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
     _bat = [Bat bat];
     _bat.position = CGPointMake(300, 30);
     _bat.physicsBody.categoryBitMask = ENEMY_CATEGORY;
-    _bat.physicsBody.collisionBitMask = 0;
+    _bat.physicsBody.collisionBitMask = PLAYER_CATEGORY;
     _bat.physicsBody.contactTestBitMask = PLAYER_CATEGORY;
     _bat.shadowCastBitMask = LIGHT_CATEGORY;
     
@@ -203,7 +223,7 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
             
             if(!_isGameOver){
             _lanternLit = YES;
-            [_henry pickLantern:_world isFlipped:_flipped];
+            [_henry pickLantern];
             }
         }
         
@@ -229,12 +249,16 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
     }
     if(_lanternLit){
         _lanternLit = NO;
-        [_world enumerateChildNodesWithName:@"lanternLightParticle" usingBlock:^(SKNode *node, BOOL *stop) {
+        [_henry enumerateChildNodesWithName:@"lanternLightParticle" usingBlock:^(SKNode *node, BOOL *stop) {
             [node removeFromParent];
         }];
-        [_world enumerateChildNodesWithName:@"lanternLight" usingBlock:^(SKNode *node, BOOL *stop) {
+        [_henry enumerateChildNodesWithName:@"lanternLight" usingBlock:^(SKNode *node, BOOL *stop) {
             [node removeFromParent];
         }];
+        [_henry enumerateChildNodesWithName:@"fakeLanternLight" usingBlock:^(SKNode *node, BOOL *stop) {
+            [node removeFromParent];
+        }];
+        
     }
 }
 -(void)gameOver
@@ -295,12 +319,27 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
         [_bat attackPlayer:_henry];
     }
     
-    [_world enumerateChildNodesWithName:@"lanternLightParticle" usingBlock:^(SKNode *node, BOOL *stop) {
-        if(_bat.position.x - node.position.x < 50){
-            [_bat removeFromParent];
+    [_henry enumerateChildNodesWithName:@"lanternLightParticle" usingBlock:^(SKNode *node, BOOL *stop) {
+        if(!_flipped){
+        
+            
+            if(_bat.position.x - node.position.x < 100 && _bat.position.x - node.position.x > 0){
+                [_bat removeFromParent];
+            }
+            
+        }
+        else{
+            CGPoint nodePosition = [_world convertPoint:node.position fromNode:node.parent];
+        
+            if(nodePosition.x - _bat.position.x < 100 && nodePosition.x - _bat.position.x > 0){
+                [_bat removeFromParent];
+            }
             
         }
     }];
+        
+    
+    [self handleGeneration:_generator];
     
 }
 -(void)centerOnNode:(SKNode *)node
@@ -310,11 +349,26 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
     positionInScene.x += 200;
     _world.position = CGPointMake(_world.position.x - positionInScene.x, _world.position.y);
     
+    _backgroundLayer.position = CGPointMake(_backgroundLayer.position.x - positionInScene.x * 0.3,
+                                                _backgroundLayer.position.y);
 }
 
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
 }
+
+-(void)handleGeneration:(BackgroundGenerator *)generator
+{
+    
+    [_backgroundLayer enumerateChildNodesWithName:@"background" usingBlock:^(SKNode *node, BOOL *stop) {
+        if (node.position.x < _henry.position.x) {
+            [_generator generate];
+        }
+    }];
+    
+    
+}
+
 
 @end
