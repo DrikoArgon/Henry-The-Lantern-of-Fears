@@ -56,7 +56,7 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
     //Setting Delegate
     self.physicsWorld.contactDelegate = self;
    
-    //Creating background Layer
+    //Creating background Layers (Holds the backgrounds)
     _backgroundLayer = [SKNode node];
     _backgroundLayer.zPosition = -2;
     [self addChild:_backgroundLayer];
@@ -104,7 +104,7 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
     
     //Inserting Enemy
     _bat = [Bat bat];
-    _bat.position = CGPointMake(300, 30);
+    _bat.position = CGPointMake(1000, 30);
     _bat.physicsBody.categoryBitMask = ENEMY_CATEGORY;
     _bat.physicsBody.collisionBitMask = PLAYER_CATEGORY;
     _bat.physicsBody.contactTestBitMask = PLAYER_CATEGORY;
@@ -145,6 +145,30 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
                                          -self.frame.size.height * 0.5 + lanternButton.frame.size.height * 0.5);
     
     [_HUD addChild:lanternButton];
+    
+    SKSpriteNode *configButton = [SKSpriteNode spriteNodeWithImageNamed:@"gear"];
+    configButton.size = CGSizeMake(20, 20);
+    configButton.name = @"configButton";
+    configButton.position = CGPointMake(self.frame.size.width * 0.5 - configButton.frame.size.width * 0.5 - 5,
+                                         self.frame.size.height * 0.5 - configButton.frame.size.height * 0.5 - 5);
+    
+    [_HUD addChild:configButton];
+    
+    SKSpriteNode *encyclopediaButton = [SKSpriteNode spriteNodeWithImageNamed:@"book"];
+    encyclopediaButton.size = CGSizeMake(20, 20);
+    encyclopediaButton.name = @"encyclopediaButton";
+    encyclopediaButton.position = CGPointMake(self.frame.size.width * 0.5 - encyclopediaButton.frame.size.width * 2.0 - 10,
+                                        self.frame.size.height * 0.5 - encyclopediaButton.frame.size.height * 0.5 - 5);
+    
+    [_HUD addChild:encyclopediaButton];
+    
+    SKSpriteNode *changeStoneButton = [SKSpriteNode spriteNodeWithImageNamed:@"magicStone"];
+    changeStoneButton.size = CGSizeMake(20, 20);
+    changeStoneButton.name = @"changeStoneButton";
+    changeStoneButton.position = CGPointMake(self.frame.size.width * 0.5 - changeStoneButton.frame.size.width * 4.0 - 10,
+                                              self.frame.size.height * 0.5 - changeStoneButton.frame.size.height * 0.5 - 5);
+    
+    [_HUD addChild:changeStoneButton];
     
     // Inserting Life and Score
     SKSpriteNode *life = [SKSpriteNode spriteNodeWithColor:[UIColor blackColor] size:CGSizeMake(40, 40)];
@@ -357,15 +381,16 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
         }
     }];
     
-    if (_bat.position.x - _henry.position.x < 100 ) {
+    if (_bat.position.x - _henry.position.x < 200 ) {
         [_bat attackPlayer:_henry];
     }
     
     [_henry enumerateChildNodesWithName:@"lanternLightParticle" usingBlock:^(SKNode *node, BOOL *stop) {
         if(!_flipped){
         
+            CGPoint nodePosition = [_world convertPoint:node.position fromNode:node.parent];
             
-            if(_bat.position.x - node.position.x < 150 && _bat.position.x - node.position.x > 0){
+            if(_bat.position.x - nodePosition.x < 100 && _bat.position.x - nodePosition.x > 0){
                 [_bat removeFromParent];
             }
             
@@ -373,7 +398,7 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
         else{
             CGPoint nodePosition = [_world convertPoint:node.position fromNode:node.parent];
         
-            if(nodePosition.x - _bat.position.x < 150 && nodePosition.x - _bat.position.x > 0){
+            if(nodePosition.x - _bat.position.x < 100 && nodePosition.x - _bat.position.x > 0){
                 [_bat removeFromParent];
             }
             

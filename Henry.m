@@ -19,7 +19,7 @@
 {
     
     Henry *henry = [Henry spriteNodeWithImageNamed:@"idle1"];
-    henry.size = CGSizeMake(39, 60);
+    henry.size = CGSizeMake(54, 80);
 
     SKSpriteNode *lightBlocker = [SKSpriteNode spriteNodeWithColor:[UIColor grayColor] size:CGSizeMake(1,40)];
     lightBlocker.zPosition = -3;
@@ -61,7 +61,7 @@
 -(void)jump
 {
     
-    [self.physicsBody applyImpulse:CGVectorMake(0, 40)];
+    [self.physicsBody applyImpulse:CGVectorMake(0, 100)];
     
     
 }
