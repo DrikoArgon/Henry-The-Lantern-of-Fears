@@ -9,35 +9,24 @@
 #import "Henry.h"
 
 @implementation Henry
+{
+    
+    NSArray *_AnimationFrames;
+    
+}
 
 +(id)henry
 {
     
-    Henry *henry = [Henry spriteNodeWithImageNamed:@"henrymenine"];
+    Henry *henry = [Henry spriteNodeWithImageNamed:@"idle1"];
     henry.size = CGSizeMake(39, 60);
-//    SKSpriteNode *leftEye = [SKSpriteNode spriteNodeWithColor:[UIColor whiteColor] size:CGSizeMake(5, 5)];
-//    leftEye.position = CGPointMake(-3, 8);
-//    [henry addChild:leftEye];
-//    
-//    SKSpriteNode *rightEye = [SKSpriteNode spriteNodeWithColor:[UIColor whiteColor] size:CGSizeMake(5, 5)];
-//    rightEye.position = CGPointMake(13, 8);
-//    [henry addChild:rightEye];
-    
+
     SKSpriteNode *lightBlocker = [SKSpriteNode spriteNodeWithColor:[UIColor grayColor] size:CGSizeMake(1,40)];
     lightBlocker.zPosition = -3;
     lightBlocker.position = CGPointMake(henry.frame.size.width * 1.5, henry.position.y);
     lightBlocker.shadowCastBitMask = 0x1 << 30;
     [henry addChild:lightBlocker];
     
-//    SKSpriteNode *lightBlocker2 = [SKSpriteNode spriteNodeWithColor:[UIColor grayColor] size:CGSizeMake(40,40)];
-//    lightBlocker2.position = CGPointMake(40, -henry.frame.size.height);
-//    lightBlocker2.shadowCastBitMask = 0x1 << 30;
-//    [henry addChild:lightBlocker2];
-//
-//    SKSpriteNode *lightBlocker3 = [SKSpriteNode spriteNodeWithColor:[UIColor grayColor] size:CGSizeMake(40,40)];
-//    lightBlocker3.position = CGPointMake(40, henry.frame.size.height *2);
-//    lightBlocker3.shadowCastBitMask = 0x1 << 31;
-//    [henry addChild:lightBlocker3];
     
     henry.name = @"henry";
     
@@ -45,6 +34,12 @@
     henry.physicsBody.restitution = 0.0;
     henry.physicsBody.allowsRotation  = NO;
     henry.shadowCastBitMask = 0x1 << 31;
+    
+    SKAction *idleAnimation = [SKAction repeatActionForever:[SKAction animateWithTextures:@[[SKTexture textureWithImageNamed:@"idle1"],[SKTexture textureWithImageNamed:@"idle2"],[SKTexture textureWithImageNamed:@"idle1"],[SKTexture textureWithImageNamed:@"idle4"]] timePerFrame:0.2]];
+    
+    [henry runAction:idleAnimation];
+    
+    
     
     
     return henry;
@@ -110,5 +105,25 @@
     
 }
 
+//-(void)idleAnimation
+//{
+//    
+//    NSMutableArray *idleFrames = [NSMutableArray array];
+//    SKTextureAtlas *idleHenryAtlas = [SKTextureAtlas atlasNamed:@"IdleAnimation"];
+//    for (int i = 1; i < 5; i++) {
+//        if (i == 3) {
+//            [idleFrames addObject:[idleHenryAtlas textureNamed:@"idle1"]];
+//        }
+//        else{
+//            [idleFrames addObject:[idleHenryAtlas textureNamed:[NSString stringWithFormat:@"idle%d",i]]];
+//        }
+//    }
+//    
+//    _AnimationFrames = idleFrames;
+//    
+//    [self runAction: [SKAction repeatActionForever:[SKAction animateWithTextures:_AnimationFrames
+//                                                                    timePerFrame:0.2]]withKey:@"idleAnimation"];
+//    
+//}
 
 @end

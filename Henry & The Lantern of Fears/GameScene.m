@@ -10,6 +10,7 @@
 #import "Henry.h"
 #import "Bat.h"
 #import "BackgroundGenerator.h"
+#import "Kopp.h"
 
 @interface GameScene ()
 
@@ -77,7 +78,7 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
     ground.physicsBody.categoryBitMask = GROUND_CATEGORY;
     [_world addChild:ground];
     
-    SKSpriteNode *ground2 = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(self.frame.size.width * 20, 100)];
+    SKSpriteNode *ground2 = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(self.frame.size.width , 100)];
     ground2.position = CGPointMake(ground.frame.size.width, -self.frame.size.height * 0.5 + ground2.frame.size.height * 0.5);
     ground2.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:ground2.size];
     ground2.physicsBody.dynamic = NO;
@@ -96,6 +97,9 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
     _henry.physicsBody.collisionBitMask = GROUND_CATEGORY;
     _henry.physicsBody.contactTestBitMask = GROUND_CATEGORY;
     [_world addChild:_henry];
+    
+    //Inserting Kopp
+    Kopp *kopp = [Kopp kopp:_henry];
     
     //Inserting Enemy
     _bat = [Bat bat];
@@ -180,7 +184,10 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
 {
     
     _numberOfLives = numberOfLives;
-    _lifeLabel.text = [NSString stringWithFormat:@"%d",numberOfLives];
+    if (numberOfLives >= 0) {
+        _lifeLabel.text = [NSString stringWithFormat:@"%d",numberOfLives];
+    }
+    
     
 }
 
@@ -233,6 +240,9 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
 
 -(void)clear
 {
+    _isGameOver = NO;
+    _henry.position = CGPointMake(0, 0);
+    [_world addChild:_henry];
     
     
 }
@@ -266,7 +276,32 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
     _isGameOver = YES;
     self.numberOfLives--;
     
+    if(_lanternLit){
+        _lanternLit = NO;
+        [_henry enumerateChildNodesWithName:@"lanternLightParticle" usingBlock:^(SKNode *node, BOOL *stop) {
+            [node removeFromParent];
+        }];
+        [_henry enumerateChildNodesWithName:@"lanternLight" usingBlock:^(SKNode *node, BOOL *stop) {
+            [node removeFromParent];
+        }];
+        [_henry enumerateChildNodesWithName:@"fakeLanternLight" usingBlock:^(SKNode *node, BOOL *stop) {
+            [node removeFromParent];
+        }];
+        
+    }
     
+    if (self.numberOfLives >= 0) {
+        [self performSelector:@selector(clear) withObject:self afterDelay:3];
+    }
+    else{
+        
+        SKLabelNode *gameOverLabel = [SKLabelNode labelNodeWithFontNamed:@"DIN Alternate"];
+        gameOverLabel.position = CGPointMake(0, 0);
+        gameOverLabel.fontColor = [UIColor redColor];
+        gameOverLabel.fontSize = 40;
+        gameOverLabel.text = @"Game Over";
+        [_HUD addChild:gameOverLabel];
+    }
 }
 
 -(void)didBeginContact:(SKPhysicsContact *)contact

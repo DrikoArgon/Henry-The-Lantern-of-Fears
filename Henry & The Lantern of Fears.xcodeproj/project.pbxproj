@@ -13,7 +13,10 @@
 		250627961A72F54300325CEE /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 250627941A72F54300325CEE /* spark.png */; };
 		2506279A1A743F0E00325CEE /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 250627991A743F0E00325CEE /* background.jpg */; };
 		2506279D1A74772400325CEE /* BackgroundGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2506279C1A74772400325CEE /* BackgroundGenerator.m */; };
-		2506279F1A749CE900325CEE /* henrymenine.png in Resources */ = {isa = PBXBuildFile; fileRef = 2506279E1A749CE900325CEE /* henrymenine.png */; };
+		250627AC1A75715400325CEE /* idle1.png in Resources */ = {isa = PBXBuildFile; fileRef = 250627AB1A75715400325CEE /* idle1.png */; };
+		250627AE1A75715B00325CEE /* idle2.png in Resources */ = {isa = PBXBuildFile; fileRef = 250627AD1A75715B00325CEE /* idle2.png */; };
+		250627B01A75716100325CEE /* idle4.png in Resources */ = {isa = PBXBuildFile; fileRef = 250627AF1A75716100325CEE /* idle4.png */; };
+		250627B31A75748200325CEE /* Kopp.m in Sources */ = {isa = PBXBuildFile; fileRef = 250627B21A75748200325CEE /* Kopp.m */; };
 		2540F81C1A71467A00AB4625 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2540F81B1A71467A00AB4625 /* main.m */; };
 		2540F81F1A71467A00AB4625 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2540F81E1A71467A00AB4625 /* AppDelegate.m */; };
 		2540F8221A71467A00AB4625 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2540F8211A71467A00AB4625 /* GameScene.m */; };
@@ -50,7 +53,11 @@
 		250627991A743F0E00325CEE /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		2506279B1A74772400325CEE /* BackgroundGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackgroundGenerator.h; path = ../BackgroundGenerator.h; sourceTree = "<group>"; };
 		2506279C1A74772400325CEE /* BackgroundGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BackgroundGenerator.m; path = ../BackgroundGenerator.m; sourceTree = "<group>"; };
-		2506279E1A749CE900325CEE /* henrymenine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = henrymenine.png; sourceTree = "<group>"; };
+		250627AB1A75715400325CEE /* idle1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = idle1.png; sourceTree = "<group>"; };
+		250627AD1A75715B00325CEE /* idle2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = idle2.png; sourceTree = "<group>"; };
+		250627AF1A75716100325CEE /* idle4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = idle4.png; sourceTree = "<group>"; };
+		250627B11A75748200325CEE /* Kopp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kopp.h; sourceTree = "<group>"; };
+		250627B21A75748200325CEE /* Kopp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Kopp.m; sourceTree = "<group>"; };
 		2540F8161A71467A00AB4625 /* Henry & The Lantern of Fears.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Henry & The Lantern of Fears.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2540F81A1A71467A00AB4625 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2540F81B1A71467A00AB4625 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,6 +102,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		250627A91A75712B00325CEE /* Henry */ = {
+			isa = PBXGroup;
+			children = (
+				250627AA1A75713C00325CEE /* IdleAnimation */,
+			);
+			name = Henry;
+			sourceTree = "<group>";
+		};
+		250627AA1A75713C00325CEE /* IdleAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				250627AF1A75716100325CEE /* idle4.png */,
+				250627AD1A75715B00325CEE /* idle2.png */,
+				250627AB1A75715400325CEE /* idle1.png */,
+			);
+			name = IdleAnimation;
+			sourceTree = "<group>";
+		};
 		2540F80D1A71467A00AB4625 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +147,8 @@
 				2540F81E1A71467A00AB4625 /* AppDelegate.m */,
 				25FCDB3F1A714AF600B842F2 /* Henry.h */,
 				25FCDB401A714AF600B842F2 /* Henry.m */,
+				250627B11A75748200325CEE /* Kopp.h */,
+				250627B21A75748200325CEE /* Kopp.m */,
 				2506279B1A74772400325CEE /* BackgroundGenerator.h */,
 				2506279C1A74772400325CEE /* BackgroundGenerator.m */,
 				2540F8201A71467A00AB4625 /* GameScene.h */,
@@ -131,6 +158,7 @@
 				2540F8261A71467A00AB4625 /* GameViewController.m */,
 				2540F8281A71467A00AB4625 /* Main.storyboard */,
 				2540F82B1A71467A00AB4625 /* Images.xcassets */,
+				250627A91A75712B00325CEE /* Henry */,
 				25FCDB5C1A729C3700B842F2 /* Enemies */,
 				2540F8191A71467A00AB4625 /* Supporting Files */,
 			);
@@ -140,7 +168,6 @@
 		2540F8191A71467A00AB4625 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2506279E1A749CE900325CEE /* henrymenine.png */,
 				250627991A743F0E00325CEE /* background.jpg */,
 				250627911A72EB5200325CEE /* lantern.png */,
 				25FCDB5D1A72A7A000B842F2 /* bat.png */,
@@ -264,14 +291,16 @@
 			files = (
 				250627961A72F54300325CEE /* spark.png in Resources */,
 				25FCDB471A716B1E00B842F2 /* rightButton.png in Resources */,
+				250627B01A75716100325CEE /* idle4.png in Resources */,
 				250627951A72F54300325CEE /* lanternLight.sks in Resources */,
 				25FCDB5E1A72A7A000B842F2 /* bat.png in Resources */,
 				2540F82C1A71467A00AB4625 /* Images.xcassets in Resources */,
 				25FCDB531A72746800B842F2 /* x.png in Resources */,
+				250627AE1A75715B00325CEE /* idle2.png in Resources */,
 				2540F8241A71467A00AB4625 /* GameScene.sks in Resources */,
-				2506279F1A749CE900325CEE /* henrymenine.png in Resources */,
 				25FCDB4F1A717BF000B842F2 /* leftButton.png in Resources */,
 				2506279A1A743F0E00325CEE /* background.jpg in Resources */,
+				250627AC1A75715400325CEE /* idle1.png in Resources */,
 				2540F82A1A71467A00AB4625 /* Main.storyboard in Resources */,
 				25FCDB511A718DAA00B842F2 /* jumpButton.png in Resources */,
 				250627921A72EB5200325CEE /* lantern.png in Resources */,
@@ -298,6 +327,7 @@
 				2540F8221A71467A00AB4625 /* GameScene.m in Sources */,
 				25FCDB411A714AF600B842F2 /* Henry.m in Sources */,
 				2540F81C1A71467A00AB4625 /* main.m in Sources */,
+				250627B31A75748200325CEE /* Kopp.m in Sources */,
 				2506278E1A72B0E200325CEE /* Bat.m in Sources */,
 				2506279D1A74772400325CEE /* BackgroundGenerator.m in Sources */,
 			);
