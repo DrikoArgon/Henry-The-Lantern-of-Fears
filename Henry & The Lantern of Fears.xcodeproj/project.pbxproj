@@ -17,6 +17,10 @@
 		250627AE1A75715B00325CEE /* idle2.png in Resources */ = {isa = PBXBuildFile; fileRef = 250627AD1A75715B00325CEE /* idle2.png */; };
 		250627B01A75716100325CEE /* idle4.png in Resources */ = {isa = PBXBuildFile; fileRef = 250627AF1A75716100325CEE /* idle4.png */; };
 		250627B31A75748200325CEE /* Kopp.m in Sources */ = {isa = PBXBuildFile; fileRef = 250627B21A75748200325CEE /* Kopp.m */; };
+		250627B61A7579B200325CEE /* run1.png in Resources */ = {isa = PBXBuildFile; fileRef = 250627B51A7579B200325CEE /* run1.png */; };
+		250627B81A7579B800325CEE /* run2.png in Resources */ = {isa = PBXBuildFile; fileRef = 250627B71A7579B800325CEE /* run2.png */; };
+		250627BA1A7579BD00325CEE /* run3.png in Resources */ = {isa = PBXBuildFile; fileRef = 250627B91A7579BD00325CEE /* run3.png */; };
+		250627BC1A7579C200325CEE /* run4.png in Resources */ = {isa = PBXBuildFile; fileRef = 250627BB1A7579C200325CEE /* run4.png */; };
 		2540F81C1A71467A00AB4625 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2540F81B1A71467A00AB4625 /* main.m */; };
 		2540F81F1A71467A00AB4625 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2540F81E1A71467A00AB4625 /* AppDelegate.m */; };
 		2540F8221A71467A00AB4625 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2540F8211A71467A00AB4625 /* GameScene.m */; };
@@ -58,6 +62,10 @@
 		250627AF1A75716100325CEE /* idle4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = idle4.png; sourceTree = "<group>"; };
 		250627B11A75748200325CEE /* Kopp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kopp.h; sourceTree = "<group>"; };
 		250627B21A75748200325CEE /* Kopp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Kopp.m; sourceTree = "<group>"; };
+		250627B51A7579B200325CEE /* run1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = run1.png; sourceTree = "<group>"; };
+		250627B71A7579B800325CEE /* run2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = run2.png; sourceTree = "<group>"; };
+		250627B91A7579BD00325CEE /* run3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = run3.png; sourceTree = "<group>"; };
+		250627BB1A7579C200325CEE /* run4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = run4.png; sourceTree = "<group>"; };
 		2540F8161A71467A00AB4625 /* Henry & The Lantern of Fears.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Henry & The Lantern of Fears.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2540F81A1A71467A00AB4625 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2540F81B1A71467A00AB4625 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -105,6 +113,7 @@
 		250627A91A75712B00325CEE /* Henry */ = {
 			isa = PBXGroup;
 			children = (
+				250627B41A7579A500325CEE /* RunAnimation */,
 				250627AA1A75713C00325CEE /* IdleAnimation */,
 			);
 			name = Henry;
@@ -118,6 +127,17 @@
 				250627AB1A75715400325CEE /* idle1.png */,
 			);
 			name = IdleAnimation;
+			sourceTree = "<group>";
+		};
+		250627B41A7579A500325CEE /* RunAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				250627BB1A7579C200325CEE /* run4.png */,
+				250627B91A7579BD00325CEE /* run3.png */,
+				250627B71A7579B800325CEE /* run2.png */,
+				250627B51A7579B200325CEE /* run1.png */,
+			);
+			name = RunAnimation;
 			sourceTree = "<group>";
 		};
 		2540F80D1A71467A00AB4625 = {
@@ -290,14 +310,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				250627961A72F54300325CEE /* spark.png in Resources */,
+				250627B61A7579B200325CEE /* run1.png in Resources */,
 				25FCDB471A716B1E00B842F2 /* rightButton.png in Resources */,
 				250627B01A75716100325CEE /* idle4.png in Resources */,
 				250627951A72F54300325CEE /* lanternLight.sks in Resources */,
 				25FCDB5E1A72A7A000B842F2 /* bat.png in Resources */,
 				2540F82C1A71467A00AB4625 /* Images.xcassets in Resources */,
+				250627B81A7579B800325CEE /* run2.png in Resources */,
 				25FCDB531A72746800B842F2 /* x.png in Resources */,
 				250627AE1A75715B00325CEE /* idle2.png in Resources */,
 				2540F8241A71467A00AB4625 /* GameScene.sks in Resources */,
+				250627BA1A7579BD00325CEE /* run3.png in Resources */,
+				250627BC1A7579C200325CEE /* run4.png in Resources */,
 				25FCDB4F1A717BF000B842F2 /* leftButton.png in Resources */,
 				2506279A1A743F0E00325CEE /* background.jpg in Resources */,
 				250627AC1A75715400325CEE /* idle1.png in Resources */,

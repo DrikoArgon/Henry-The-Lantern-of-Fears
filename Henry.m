@@ -35,12 +35,7 @@
     henry.physicsBody.allowsRotation  = NO;
     henry.shadowCastBitMask = 0x1 << 31;
     
-    SKAction *idleAnimation = [SKAction repeatActionForever:[SKAction animateWithTextures:@[[SKTexture textureWithImageNamed:@"idle1"],[SKTexture textureWithImageNamed:@"idle2"],[SKTexture textureWithImageNamed:@"idle1"],[SKTexture textureWithImageNamed:@"idle4"]] timePerFrame:0.2]];
-    
-    [henry runAction:idleAnimation];
-    
-    
-    
+    [henry idleAnimation];
     
     return henry;
 }
@@ -48,13 +43,18 @@
 {
     
     SKAction *incrementRight = [SKAction repeatActionForever:[SKAction moveByX:30 y:0 duration:0.3]];
+    SKAction *walkAnimation = [SKAction repeatActionForever:[SKAction animateWithTextures:@[[SKTexture textureWithImageNamed:@"run1"],[SKTexture textureWithImageNamed:@"run2"],[SKTexture textureWithImageNamed:@"run3"],[SKTexture textureWithImageNamed:@"run4"]] timePerFrame:0.2]];
     
+    [self runAction:walkAnimation withKey:@"walkAnimation"];
     [self runAction:incrementRight withKey:@"walkRight"];
 }
 -(void)walkLeft
 {
     
     SKAction *incrementLeft = [SKAction repeatActionForever:[SKAction moveByX:-30 y:0 duration:0.3]];
+    SKAction *walkAnimation = [SKAction repeatActionForever:[SKAction animateWithTextures:@[[SKTexture textureWithImageNamed:@"run1"],[SKTexture textureWithImageNamed:@"run2"],[SKTexture textureWithImageNamed:@"run3"],[SKTexture textureWithImageNamed:@"run4"]] timePerFrame:0.2]];
+    
+    [self runAction:walkAnimation withKey:@"walkAnimation"];
     
     [self runAction:incrementLeft withKey:@"walkLeft"];
 }
@@ -105,9 +105,14 @@
     
 }
 
-//-(void)idleAnimation
-//{
-//    
+-(void)idleAnimation
+{
+    
+    SKAction *idleAnimation = [SKAction repeatActionForever:[SKAction animateWithTextures:@[[SKTexture textureWithImageNamed:@"idle1"],[SKTexture textureWithImageNamed:@"idle2"],[SKTexture textureWithImageNamed:@"idle1"],[SKTexture textureWithImageNamed:@"idle4"]] timePerFrame:0.2]];
+    
+    [self runAction:idleAnimation withKey:@"idleAnimation"];
+    
+    
 //    NSMutableArray *idleFrames = [NSMutableArray array];
 //    SKTextureAtlas *idleHenryAtlas = [SKTextureAtlas atlasNamed:@"IdleAnimation"];
 //    for (int i = 1; i < 5; i++) {
@@ -123,7 +128,7 @@
 //    
 //    [self runAction: [SKAction repeatActionForever:[SKAction animateWithTextures:_AnimationFrames
 //                                                                    timePerFrame:0.2]]withKey:@"idleAnimation"];
-//    
-//}
+    
+}
 
 @end

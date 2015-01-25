@@ -14,5 +14,6 @@
 -(void)walkRight;
 -(void)walkLeft;
 -(void)jump;
+-(void)idleAnimation;
 -(void)pickLantern;
 @end

@@ -35,6 +35,7 @@
     BOOL _rightButtonPressed;
     BOOL _leftButtonPressed;
     BOOL _jumping;
+    BOOL _moving;
     BOOL _lanternLit;
     BOOL _flipped; //If Henry's image is flipped to walk left
     
@@ -202,7 +203,8 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
         if([n.name isEqualToString:@"rightButton"]){
             
             _rightButtonPressed = YES;
-            
+            _moving = YES;
+            [_henry removeActionForKey:@"idleAnimation"];
             if(_henry.xScale == -1){
                 _henry.xScale = 1;
                 _flipped = NO;
@@ -212,7 +214,8 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
         else if([n.name isEqualToString:@"leftButton"]){
             
             _leftButtonPressed = YES;
-            
+            _moving = YES;
+            [_henry removeActionForKey:@"idleAnimation"];
             if(_henry.xScale == 1){
                 _henry.xScale = -1;
                 _flipped = YES;
@@ -251,10 +254,14 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
 {
     if (_rightButtonPressed) {
         _rightButtonPressed = NO;
+        _moving = NO;
         [_henry removeActionForKey:@"walkRight"];
+        [_henry idleAnimation];
     }
     if (_leftButtonPressed) {
         _leftButtonPressed = NO;
+        _moving = NO;
+        [_henry idleAnimation];
         [_henry removeActionForKey:@"walkLeft"];
     }
     if(_lanternLit){
@@ -358,7 +365,7 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
         if(!_flipped){
         
             
-            if(_bat.position.x - node.position.x < 100 && _bat.position.x - node.position.x > 0){
+            if(_bat.position.x - node.position.x < 150 && _bat.position.x - node.position.x > 0){
                 [_bat removeFromParent];
             }
             
@@ -366,13 +373,14 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
         else{
             CGPoint nodePosition = [_world convertPoint:node.position fromNode:node.parent];
         
-            if(nodePosition.x - _bat.position.x < 100 && nodePosition.x - _bat.position.x > 0){
+            if(nodePosition.x - _bat.position.x < 150 && nodePosition.x - _bat.position.x > 0){
                 [_bat removeFromParent];
             }
             
         }
     }];
         
+    
     
     [self handleGeneration:_generator];
     
