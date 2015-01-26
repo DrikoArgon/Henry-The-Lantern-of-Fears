@@ -526,7 +526,7 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:backgroundImageName normalMapped:NO];
         //background.lightingBitMask = 0x1 << 31;
         background.size = self.frame.size;
-        background.position = CGPointMake(currentBackgroundX,90);
+        background.position = CGPointMake(currentBackgroundX,80);
         background.name = @"background";
         [backgroundLayer addChild:background];
         currentBackgroundX += background.frame.size.width;
