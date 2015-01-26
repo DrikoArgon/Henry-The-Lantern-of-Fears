@@ -95,26 +95,9 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
  ///////////////////////////////////////////////////////////Inserting Objects//////////////////////////////////////////////////////////////
     
     //Inserting Ground
-<<<<<<< Updated upstream
     
     [self generateWorldWithImage:@"ground" repeat:4];
     
-=======
-    SKSpriteNode *ground = [SKSpriteNode spriteNodeWithImageNamed:@"groundRamp"];
-    ground.size = CGSizeMake(self.frame.size.width , 100);
-    ground.position = CGPointMake(60, -self.frame.size.height * 0.5 + ground.frame.size.height * 0.5);
-    ground.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.frame.size.width , 50)];
-    ground.physicsBody.dynamic = NO;
-    ground.physicsBody.categoryBitMask = GROUND_CATEGORY;
-    [_world addChild:ground];
-    
-//    SKSpriteNode *ground2 = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(self.frame.size.width , 100)];
-//    ground2.position = CGPointMake(ground.frame.size.width, -self.frame.size.height * 0.5 + ground2.frame.size.height * 0.5);
-//    ground2.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:ground2.size];
-//    ground2.physicsBody.dynamic = NO;
-//    ground2.physicsBody.categoryBitMask = GROUND_CATEGORY;
-//    [_world addChild:ground2];
->>>>>>> Stashed changes
     
    //Creating Background
     [self generateBackgroundIn:_backgroundMountainLayer withImage:@"backgroundMountain" repeat:10];
