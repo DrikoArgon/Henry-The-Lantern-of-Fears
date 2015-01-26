@@ -53,7 +53,7 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
 -(void)didMoveToView:(SKView *)view {
     /* Setup your scene here */
     
-   
+    self.backgroundColor = [UIColor redColor];
     
     
     //Setting Delegate
@@ -109,9 +109,7 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
     
    //Creating Background
     [self generateBackgroundIn:_backgroundMountainLayer withImage:@"backgroundMountain" repeat:10];
-    
     [self generateBackgroundIn:_backgroundTreeLayer2 withImage:@"backgroundTrees2" repeat:10];
-
     [self generateBackgroundIn:_backgroundTreeLayer withImage:@"backgroundTrees" repeat:10];
     
     SKSpriteNode *sky = [SKSpriteNode spriteNodeWithImageNamed:@"backgroundSky"];
@@ -488,7 +486,7 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
     CGFloat currentBackgroundX = 0;
     
     for (int i = 0; i < times; i++) {
-        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:backgroundImageName];
+        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:backgroundImageName normalMapped:NO];
         //background.lightingBitMask = 0x1 << 31;
         background.size = self.frame.size;
         background.position = CGPointMake(currentBackgroundX,70);
