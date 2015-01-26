@@ -48,6 +48,9 @@
 		3BA8DEE11A768A4D00740706 /* backgroundTrees.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA8DEE01A768A4D00740706 /* backgroundTrees.png */; };
 		3BA8DEE31A768AB000740706 /* backgroundMountain.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA8DEE21A768AB000740706 /* backgroundMountain.png */; };
 		3BA8DEE71A769A3A00740706 /* ground.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA8DEE61A769A3A00740706 /* ground.png */; };
+		3BA8DEEB1A76CAD600740706 /* groundBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA8DEE81A76CAD600740706 /* groundBig.png */; };
+		3BA8DEEC1A76CAD600740706 /* groundGap.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA8DEE91A76CAD600740706 /* groundGap.png */; };
+		3BA8DEED1A76CAD600740706 /* groundRamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA8DEEA1A76CAD600740706 /* groundRamp.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +118,9 @@
 		3BA8DEE01A768A4D00740706 /* backgroundTrees.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundTrees.png; sourceTree = "<group>"; };
 		3BA8DEE21A768AB000740706 /* backgroundMountain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundMountain.png; sourceTree = "<group>"; };
 		3BA8DEE61A769A3A00740706 /* ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground.png; sourceTree = "<group>"; };
+		3BA8DEE81A76CAD600740706 /* groundBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = groundBig.png; sourceTree = "<group>"; };
+		3BA8DEE91A76CAD600740706 /* groundGap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = groundGap.png; sourceTree = "<group>"; };
+		3BA8DEEA1A76CAD600740706 /* groundRamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = groundRamp.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +246,9 @@
 		2540F8191A71467A00AB4625 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3BA8DEE81A76CAD600740706 /* groundBig.png */,
+				3BA8DEE91A76CAD600740706 /* groundGap.png */,
+				3BA8DEEA1A76CAD600740706 /* groundRamp.png */,
 				3BA8DEE61A769A3A00740706 /* ground.png */,
 				250628011A75F8C000325CEE /* nightForestMusic.mp3 */,
 				250628031A75F8C400325CEE /* nightForestSound.mp3 */,
@@ -374,7 +383,11 @@
 				250628041A75F8C400325CEE /* nightForestSound.mp3 in Resources */,
 				250627BE1A758AF200325CEE /* gear.png in Resources */,
 				250628021A75F8C000325CEE /* nightForestMusic.mp3 in Resources */,
+<<<<<<< Updated upstream
 				2E8CA23C1A76C524005F41E5 /* start.jpg in Resources */,
+=======
+				3BA8DEEB1A76CAD600740706 /* groundBig.png in Resources */,
+>>>>>>> Stashed changes
 				2540F82C1A71467A00AB4625 /* Images.xcassets in Resources */,
 				250627B81A7579B800325CEE /* run2.png in Resources */,
 				250627FA1A75DF0D00325CEE /* backgroundSky.png in Resources */,
@@ -383,12 +396,14 @@
 				2540F8241A71467A00AB4625 /* GameScene.sks in Resources */,
 				3BA8DEE71A769A3A00740706 /* ground.png in Resources */,
 				250627BA1A7579BD00325CEE /* run3.png in Resources */,
+				3BA8DEED1A76CAD600740706 /* groundRamp.png in Resources */,
 				250627BC1A7579C200325CEE /* run4.png in Resources */,
 				25FCDB4F1A717BF000B842F2 /* leftButton.png in Resources */,
 				250627AC1A75715400325CEE /* idle1.png in Resources */,
 				2540F82A1A71467A00AB4625 /* Main.storyboard in Resources */,
 				25FCDB511A718DAA00B842F2 /* jumpButton.png in Resources */,
 				250627921A72EB5200325CEE /* lantern.png in Resources */,
+				3BA8DEEC1A76CAD600740706 /* groundGap.png in Resources */,
 				3BA8DEDF1A768A1700740706 /* backgroundTrees2.png in Resources */,
 				250627C01A758F3F00325CEE /* book.png in Resources */,
 				250627C21A7593AB00325CEE /* magicStone.png in Resources */,
