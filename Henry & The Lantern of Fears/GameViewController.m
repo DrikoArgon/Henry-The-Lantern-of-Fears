@@ -8,6 +8,7 @@
 
 #import "GameViewController.h"
 #import "GameScene.h"
+#import "Menu.h"
 
 @implementation SKScene (Unarchive)
 
@@ -33,7 +34,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    
+    // Configure the view.
+    SKView * skView = (SKView *)self.view;
+    skView.showsFPS = YES;
+    skView.showsNodeCount = YES;
+    /* Sprite Kit applies additional optimizations to improve rendering performance */
+    skView.ignoresSiblingOrder = YES;
+    
+    // Create and configure the scene.
+    Menu *scene = [[Menu alloc] initWithSize:self.view.bounds.size];
+    scene.scaleMode = SKSceneScaleModeAspectFill;
+    
+    // Present the scene.
+    [skView presentScene:scene];
+    //    [self beginGame];
+    
+}
 
+-(void)beginGame
+{
     // Configure the view.
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
@@ -50,6 +72,7 @@
     // Present the scene.
     [skView presentScene:scene];
 }
+
 
 - (BOOL)shouldAutorotate
 {
