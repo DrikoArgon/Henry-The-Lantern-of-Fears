@@ -11,8 +11,6 @@
 		250627921A72EB5200325CEE /* lantern.png in Resources */ = {isa = PBXBuildFile; fileRef = 250627911A72EB5200325CEE /* lantern.png */; };
 		250627951A72F54300325CEE /* lanternLight.sks in Resources */ = {isa = PBXBuildFile; fileRef = 250627931A72F54300325CEE /* lanternLight.sks */; };
 		250627961A72F54300325CEE /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 250627941A72F54300325CEE /* spark.png */; };
-		2506279A1A743F0E00325CEE /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 250627991A743F0E00325CEE /* background.jpg */; };
-		2506279D1A74772400325CEE /* BackgroundGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2506279C1A74772400325CEE /* BackgroundGenerator.m */; };
 		250627AC1A75715400325CEE /* idle1.png in Resources */ = {isa = PBXBuildFile; fileRef = 250627AB1A75715400325CEE /* idle1.png */; };
 		250627AE1A75715B00325CEE /* idle2.png in Resources */ = {isa = PBXBuildFile; fileRef = 250627AD1A75715B00325CEE /* idle2.png */; };
 		250627B01A75716100325CEE /* idle4.png in Resources */ = {isa = PBXBuildFile; fileRef = 250627AF1A75716100325CEE /* idle4.png */; };
@@ -24,6 +22,12 @@
 		250627BE1A758AF200325CEE /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 250627BD1A758AF200325CEE /* gear.png */; };
 		250627C01A758F3F00325CEE /* book.png in Resources */ = {isa = PBXBuildFile; fileRef = 250627BF1A758F3F00325CEE /* book.png */; };
 		250627C21A7593AB00325CEE /* magicStone.png in Resources */ = {isa = PBXBuildFile; fileRef = 250627C11A7593AB00325CEE /* magicStone.png */; };
+		250627F41A75DD3900325CEE /* backgroundMountain.png in Resources */ = {isa = PBXBuildFile; fileRef = 250627F31A75DD3900325CEE /* backgroundMountain.png */; };
+		250627F61A75DDAD00325CEE /* backgroundTrees.png in Resources */ = {isa = PBXBuildFile; fileRef = 250627F51A75DDAD00325CEE /* backgroundTrees.png */; };
+		250627F81A75DE0F00325CEE /* backgroundTrees2.png in Resources */ = {isa = PBXBuildFile; fileRef = 250627F71A75DE0F00325CEE /* backgroundTrees2.png */; };
+		250627FA1A75DF0D00325CEE /* backgroundSky.png in Resources */ = {isa = PBXBuildFile; fileRef = 250627F91A75DF0D00325CEE /* backgroundSky.png */; };
+		250628021A75F8C000325CEE /* nightForestMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 250628011A75F8C000325CEE /* nightForestMusic.mp3 */; };
+		250628041A75F8C400325CEE /* nightForestSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 250628031A75F8C400325CEE /* nightForestSound.mp3 */; };
 		2540F81C1A71467A00AB4625 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2540F81B1A71467A00AB4625 /* main.m */; };
 		2540F81F1A71467A00AB4625 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2540F81E1A71467A00AB4625 /* AppDelegate.m */; };
 		2540F8221A71467A00AB4625 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2540F8211A71467A00AB4625 /* GameScene.m */; };
@@ -57,9 +61,6 @@
 		250627911A72EB5200325CEE /* lantern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lantern.png; sourceTree = "<group>"; };
 		250627931A72F54300325CEE /* lanternLight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = lanternLight.sks; sourceTree = "<group>"; };
 		250627941A72F54300325CEE /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
-		250627991A743F0E00325CEE /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
-		2506279B1A74772400325CEE /* BackgroundGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackgroundGenerator.h; path = ../BackgroundGenerator.h; sourceTree = "<group>"; };
-		2506279C1A74772400325CEE /* BackgroundGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BackgroundGenerator.m; path = ../BackgroundGenerator.m; sourceTree = "<group>"; };
 		250627AB1A75715400325CEE /* idle1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = idle1.png; sourceTree = "<group>"; };
 		250627AD1A75715B00325CEE /* idle2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = idle2.png; sourceTree = "<group>"; };
 		250627AF1A75716100325CEE /* idle4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = idle4.png; sourceTree = "<group>"; };
@@ -72,6 +73,12 @@
 		250627BD1A758AF200325CEE /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		250627BF1A758F3F00325CEE /* book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = book.png; sourceTree = "<group>"; };
 		250627C11A7593AB00325CEE /* magicStone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magicStone.png; sourceTree = "<group>"; };
+		250627F31A75DD3900325CEE /* backgroundMountain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundMountain.png; sourceTree = "<group>"; };
+		250627F51A75DDAD00325CEE /* backgroundTrees.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundTrees.png; sourceTree = "<group>"; };
+		250627F71A75DE0F00325CEE /* backgroundTrees2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundTrees2.png; sourceTree = "<group>"; };
+		250627F91A75DF0D00325CEE /* backgroundSky.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundSky.png; sourceTree = "<group>"; };
+		250628011A75F8C000325CEE /* nightForestMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nightForestMusic.mp3; sourceTree = "<group>"; };
+		250628031A75F8C400325CEE /* nightForestSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nightForestSound.mp3; sourceTree = "<group>"; };
 		2540F8161A71467A00AB4625 /* Henry & The Lantern of Fears.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Henry & The Lantern of Fears.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2540F81A1A71467A00AB4625 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2540F81B1A71467A00AB4625 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -146,6 +153,32 @@
 			name = RunAnimation;
 			sourceTree = "<group>";
 		};
+		250627C71A75BA1000325CEE /* Background */ = {
+			isa = PBXGroup;
+			children = (
+				250627F91A75DF0D00325CEE /* backgroundSky.png */,
+				250627F31A75DD3900325CEE /* backgroundMountain.png */,
+				250627F71A75DE0F00325CEE /* backgroundTrees2.png */,
+				250627F51A75DDAD00325CEE /* backgroundTrees.png */,
+			);
+			name = Background;
+			sourceTree = "<group>";
+		};
+		250627C81A75BA2C00325CEE /* Buttons and HUD */ = {
+			isa = PBXGroup;
+			children = (
+				250627BF1A758F3F00325CEE /* book.png */,
+				250627BD1A758AF200325CEE /* gear.png */,
+				250627911A72EB5200325CEE /* lantern.png */,
+				250627C11A7593AB00325CEE /* magicStone.png */,
+				25FCDB521A72746800B842F2 /* x.png */,
+				25FCDB501A718DAA00B842F2 /* jumpButton.png */,
+				25FCDB4E1A717BF000B842F2 /* leftButton.png */,
+				25FCDB461A716B1E00B842F2 /* rightButton.png */,
+			);
+			name = "Buttons and HUD";
+			sourceTree = "<group>";
+		};
 		2540F80D1A71467A00AB4625 = {
 			isa = PBXGroup;
 			children = (
@@ -175,8 +208,6 @@
 				25FCDB401A714AF600B842F2 /* Henry.m */,
 				250627B11A75748200325CEE /* Kopp.h */,
 				250627B21A75748200325CEE /* Kopp.m */,
-				2506279B1A74772400325CEE /* BackgroundGenerator.h */,
-				2506279C1A74772400325CEE /* BackgroundGenerator.m */,
 				2540F8201A71467A00AB4625 /* GameScene.h */,
 				2540F8211A71467A00AB4625 /* GameScene.m */,
 				2540F8231A71467A00AB4625 /* GameScene.sks */,
@@ -194,16 +225,10 @@
 		2540F8191A71467A00AB4625 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				250627C11A7593AB00325CEE /* magicStone.png */,
-				250627BF1A758F3F00325CEE /* book.png */,
-				250627BD1A758AF200325CEE /* gear.png */,
-				250627991A743F0E00325CEE /* background.jpg */,
-				250627911A72EB5200325CEE /* lantern.png */,
-				25FCDB5D1A72A7A000B842F2 /* bat.png */,
-				25FCDB521A72746800B842F2 /* x.png */,
-				25FCDB501A718DAA00B842F2 /* jumpButton.png */,
-				25FCDB4E1A717BF000B842F2 /* leftButton.png */,
-				25FCDB461A716B1E00B842F2 /* rightButton.png */,
+				250628011A75F8C000325CEE /* nightForestMusic.mp3 */,
+				250628031A75F8C400325CEE /* nightForestSound.mp3 */,
+				250627C81A75BA2C00325CEE /* Buttons and HUD */,
+				250627C71A75BA1000325CEE /* Background */,
 				2540F81A1A71467A00AB4625 /* Info.plist */,
 				2540F81B1A71467A00AB4625 /* main.m */,
 			);
@@ -234,6 +259,7 @@
 				25FCDB551A72905C00B842F2 /* Enemy.m */,
 				2506278C1A72B0E200325CEE /* Bat.h */,
 				2506278D1A72B0E200325CEE /* Bat.m */,
+				25FCDB5D1A72A7A000B842F2 /* bat.png */,
 			);
 			name = Enemies;
 			sourceTree = "<group>";
@@ -324,16 +350,21 @@
 				250627B01A75716100325CEE /* idle4.png in Resources */,
 				250627951A72F54300325CEE /* lanternLight.sks in Resources */,
 				25FCDB5E1A72A7A000B842F2 /* bat.png in Resources */,
+				250628041A75F8C400325CEE /* nightForestSound.mp3 in Resources */,
 				250627BE1A758AF200325CEE /* gear.png in Resources */,
+				250627F81A75DE0F00325CEE /* backgroundTrees2.png in Resources */,
+				250628021A75F8C000325CEE /* nightForestMusic.mp3 in Resources */,
 				2540F82C1A71467A00AB4625 /* Images.xcassets in Resources */,
 				250627B81A7579B800325CEE /* run2.png in Resources */,
+				250627FA1A75DF0D00325CEE /* backgroundSky.png in Resources */,
 				25FCDB531A72746800B842F2 /* x.png in Resources */,
 				250627AE1A75715B00325CEE /* idle2.png in Resources */,
 				2540F8241A71467A00AB4625 /* GameScene.sks in Resources */,
+				250627F41A75DD3900325CEE /* backgroundMountain.png in Resources */,
 				250627BA1A7579BD00325CEE /* run3.png in Resources */,
 				250627BC1A7579C200325CEE /* run4.png in Resources */,
+				250627F61A75DDAD00325CEE /* backgroundTrees.png in Resources */,
 				25FCDB4F1A717BF000B842F2 /* leftButton.png in Resources */,
-				2506279A1A743F0E00325CEE /* background.jpg in Resources */,
 				250627AC1A75715400325CEE /* idle1.png in Resources */,
 				2540F82A1A71467A00AB4625 /* Main.storyboard in Resources */,
 				25FCDB511A718DAA00B842F2 /* jumpButton.png in Resources */,
@@ -365,7 +396,6 @@
 				2540F81C1A71467A00AB4625 /* main.m in Sources */,
 				250627B31A75748200325CEE /* Kopp.m in Sources */,
 				2506278E1A72B0E200325CEE /* Bat.m in Sources */,
-				2506279D1A74772400325CEE /* BackgroundGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

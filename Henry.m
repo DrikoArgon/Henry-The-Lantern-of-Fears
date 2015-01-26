@@ -22,7 +22,7 @@
     henry.size = CGSizeMake(54, 80);
 
     SKSpriteNode *lightBlocker = [SKSpriteNode spriteNodeWithColor:[UIColor grayColor] size:CGSizeMake(1,40)];
-    lightBlocker.zPosition = -3;
+    lightBlocker.zPosition = -10;
     lightBlocker.position = CGPointMake(henry.frame.size.width * 1.5, henry.position.y);
     lightBlocker.shadowCastBitMask = 0x1 << 30;
     [henry addChild:lightBlocker];

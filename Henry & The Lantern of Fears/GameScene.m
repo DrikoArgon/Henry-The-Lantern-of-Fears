@@ -9,7 +9,6 @@
 #import "GameScene.h"
 #import "Henry.h"
 #import "Bat.h"
-#import "BackgroundGenerator.h"
 #import "Kopp.h"
 
 @interface GameScene ()
@@ -22,12 +21,16 @@
 @implementation GameScene{
     
     SKNode *_world;
-    SKNode *_backgroundLayer;
+    SKNode *_backgroundTreeLayer;
+    SKNode *_backgroundTreeLayer2;
+    SKNode *_backgroundMountainLayer;
+    SKNode *_backgroundSkyLayer;
     SKNode *_HUD;
     
-    Henry *_henry;
+    SKAction *_backgroundMusic;
+    SKAction *_backgroundSound;
     
-    BackgroundGenerator *_generator;
+    Henry *_henry;
     
     NSMutableArray *_enemies;
     Bat *_bat;
@@ -55,12 +58,25 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
     
     //Setting Delegate
     self.physicsWorld.contactDelegate = self;
-   
-    //Creating background Layers (Holds the backgrounds)
-    _backgroundLayer = [SKNode node];
-    _backgroundLayer.zPosition = -2;
-    [self addChild:_backgroundLayer];
+  
+///////////////////////////////////////////////////////////Creating Layers//////////////////////////////////////////////////////////////
     
+    //Creating background Layers (Holds the backgrounds)
+    _backgroundTreeLayer = [SKNode node];
+    _backgroundTreeLayer.zPosition = -2;
+    [self addChild:_backgroundTreeLayer];
+    
+    _backgroundTreeLayer2 = [SKNode node];
+    _backgroundTreeLayer2.zPosition = -3;
+    [self addChild:_backgroundTreeLayer2];
+    
+    _backgroundMountainLayer = [SKNode node];
+    _backgroundMountainLayer.zPosition = -4;
+    [self addChild:_backgroundMountainLayer];
+    
+    _backgroundSkyLayer = [SKNode node];
+    _backgroundSkyLayer.zPosition = -5;
+    [self addChild:_backgroundSkyLayer];
     
     //Creating World ( Holds the player, the ground, the enemies, etc )
     _world = [SKNode node];
@@ -70,6 +86,11 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
     _HUD = [SKNode node];
     
     [self addChild:_HUD];
+    
+    
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+ ///////////////////////////////////////////////////////////Inserting Objects//////////////////////////////////////////////////////////////
     
     //Inserting Ground
     SKSpriteNode *ground = [SKSpriteNode spriteNodeWithColor:[UIColor greenColor] size:CGSizeMake(self.frame.size.width, 100)];
@@ -86,11 +107,16 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
     ground2.physicsBody.categoryBitMask = GROUND_CATEGORY;
     [_world addChild:ground2];
     
-    //Creating Background
-    _generator = [BackgroundGenerator generateWithBackground:_backgroundLayer];
+   //Creating Background
+    [self generateBackgroundIn:_backgroundMountainLayer withImage:@"backgroundMountain" repeat:10];
     
-    [self addChild:_generator];
-    [_generator populate];
+    [self generateBackgroundIn:_backgroundTreeLayer2 withImage:@"backgroundTrees2" repeat:10];
+
+    [self generateBackgroundIn:_backgroundTreeLayer withImage:@"backgroundTrees" repeat:10];
+    
+    SKSpriteNode *sky = [SKSpriteNode spriteNodeWithImageNamed:@"backgroundSky"];
+    sky.size = self.frame.size;
+    [_backgroundSkyLayer addChild:sky];
     
     //Inserting Player
     _henry = [Henry henry];
@@ -201,8 +227,23 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
     
     [_HUD addChild:_lifeLabel];
     
-    //Defining Inicial Values
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+//Defining Inicial Values
     self.numberOfLives = 3;
+    
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+/////////////////////////////////////////////////////////Defining Sound/////////////////////////////////////////////////////////
+    
+    _backgroundSound = [SKAction repeatActionForever:[SKAction playSoundFileNamed:@"nightForestSound.mp3" waitForCompletion:YES]];
+    [self runAction:_backgroundSound];
+    
+    _backgroundMusic = [SKAction repeatActionForever:[SKAction playSoundFileNamed:@"nightForestMusic.mp3" waitForCompletion:YES]];
+    [self runAction:_backgroundMusic];
+    
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
 }
 
 -(void)setNumberOfLives:(int)numberOfLives
@@ -407,18 +448,33 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
         
     
     
-    [self handleGeneration:_generator];
+    
     
 }
 -(void)centerOnNode:(SKNode *)node
 {
     
     CGPoint positionInScene = [self convertPoint:node.position fromNode:node.parent];
+    
+    
+    
     positionInScene.x += 200;
     _world.position = CGPointMake(_world.position.x - positionInScene.x, _world.position.y);
     
-    _backgroundLayer.position = CGPointMake(_backgroundLayer.position.x - positionInScene.x * 0.3,
-                                                _backgroundLayer.position.y);
+    
+   
+    _backgroundTreeLayer.position = CGPointMake(_backgroundTreeLayer.position.x - positionInScene.x * 0.7 ,
+                                                _backgroundTreeLayer.position.y);
+    
+    
+   _backgroundTreeLayer2.position = CGPointMake(_backgroundTreeLayer2.position.x - positionInScene.x * 0.3 ,
+                                                _backgroundTreeLayer2.position.y);
+    
+    
+    _backgroundMountainLayer.position = CGPointMake(_backgroundMountainLayer.position.x - positionInScene.x * 0.1,
+                                                 _backgroundMountainLayer.position.y);
+
+    
 }
 
 
@@ -426,14 +482,22 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
     /* Called before each frame is rendered */
 }
 
--(void)handleGeneration:(BackgroundGenerator *)generator
+-(void)generateBackgroundIn:(SKNode *)backgroundLayer withImage:(NSString *)backgroundImageName repeat:(int)times
 {
     
-    [_backgroundLayer enumerateChildNodesWithName:@"background" usingBlock:^(SKNode *node, BOOL *stop) {
-        if (node.position.x < _henry.position.x) {
-            [_generator generate];
-        }
-    }];
+    CGFloat currentBackgroundX = 0;
+    
+    for (int i = 0; i < times; i++) {
+        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:backgroundImageName];
+        //background.lightingBitMask = 0x1 << 31;
+        background.size = self.frame.size;
+        background.position = CGPointMake(currentBackgroundX,70);
+        background.name = @"background";
+        [backgroundLayer addChild:background];
+        currentBackgroundX += background.frame.size.width;
+    }
+    
+   
     
     
 }
