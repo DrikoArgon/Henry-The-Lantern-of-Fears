@@ -13,7 +13,7 @@
 +(id)henry;
 -(void)walkRight;
 -(void)walkLeft;
--(void)jump;
+-(void)jump:(BOOL)moving isFlipped:(BOOL)flipped;
 -(void)idleAnimation;
 -(void)pickLantern;
 @end

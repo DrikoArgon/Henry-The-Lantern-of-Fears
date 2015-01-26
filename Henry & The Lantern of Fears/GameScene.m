@@ -10,6 +10,7 @@
 #import "Henry.h"
 #import "Bat.h"
 #import "Kopp.h"
+#import "Ghost.h"
 
 @interface GameScene ()
 
@@ -34,6 +35,7 @@
     
     NSMutableArray *_enemies;
     Bat *_bat;
+    Ghost *_ghost;
     
     BOOL _rightButtonPressed;
     BOOL _leftButtonPressed;
@@ -136,6 +138,16 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
     _bat.shadowCastBitMask = LIGHT_CATEGORY;
     
     [_world addChild:_bat];
+    
+    _ghost = [Ghost ghost];
+    _ghost.position = CGPointMake(700, 100);
+    _ghost.physicsBody.categoryBitMask = ENEMY_CATEGORY;
+    _ghost.physicsBody.collisionBitMask = PLAYER_CATEGORY;
+    _ghost.physicsBody.contactTestBitMask = PLAYER_CATEGORY;
+    _ghost.shadowCastBitMask = LIGHT_CATEGORY;
+    
+    [_world addChild:_ghost];
+    
     //Inserting Hud Controls
     
     //Buttons
@@ -290,7 +302,7 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
 
             if(!_jumping){
                 _jumping = YES;
-                [_henry jump];
+                [_henry jump:_moving isFlipped:_flipped];
             }
         }
         else if([n.name isEqualToString:@"lanternButton"]){
@@ -316,29 +328,34 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if (_rightButtonPressed) {
-        _rightButtonPressed = NO;
-        _moving = NO;
-        [_henry removeActionForKey:@"walkRight"];
-        [_henry idleAnimation];
+    
+    if (!_jumping) {
+        if (_rightButtonPressed) {
+            _rightButtonPressed = NO;
+            _moving = NO;
+            [_henry removeActionForKey:@"walkRight"];
+            [_henry idleAnimation];
+        }
+        if (_leftButtonPressed) {
+            _leftButtonPressed = NO;
+            _moving = NO;
+            [_henry idleAnimation];
+            [_henry removeActionForKey:@"walkLeft"];
+        }
+        if(_lanternLit){
+            _lanternLit = NO;
+            [_henry enumerateChildNodesWithName:@"lanternLightParticle" usingBlock:^(SKNode *node, BOOL *stop) {
+                [node removeFromParent];
+            }];
+            [_henry enumerateChildNodesWithName:@"lanternLight" usingBlock:^(SKNode *node, BOOL *stop) {
+                [node removeFromParent];
+            }];
+            [_henry enumerateChildNodesWithName:@"fakeLanternLight" usingBlock:^(SKNode *node, BOOL *stop) {
+                [node removeFromParent];
+            }];
     }
-    if (_leftButtonPressed) {
-        _leftButtonPressed = NO;
-        _moving = NO;
-        [_henry idleAnimation];
-        [_henry removeActionForKey:@"walkLeft"];
-    }
-    if(_lanternLit){
-        _lanternLit = NO;
-        [_henry enumerateChildNodesWithName:@"lanternLightParticle" usingBlock:^(SKNode *node, BOOL *stop) {
-            [node removeFromParent];
-        }];
-        [_henry enumerateChildNodesWithName:@"lanternLight" usingBlock:^(SKNode *node, BOOL *stop) {
-            [node removeFromParent];
-        }];
-        [_henry enumerateChildNodesWithName:@"fakeLanternLight" usingBlock:^(SKNode *node, BOOL *stop) {
-            [node removeFromParent];
-        }];
+        
+   
         
     }
 }
@@ -424,6 +441,10 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
     if (_bat.position.x - _henry.position.x < 200 ) {
         [_bat attackPlayer:_henry];
     }
+    if (_ghost.position.x - _henry.position.x < 300) {
+        [_ghost attackPlayer:_henry];
+    }
+    
     
     [_henry enumerateChildNodesWithName:@"lanternLightParticle" usingBlock:^(SKNode *node, BOOL *stop) {
         if(!_flipped){
@@ -432,6 +453,10 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
             
             if(_bat.position.x - nodePosition.x < 100 && _bat.position.x - nodePosition.x > 0){
                 [_bat removeFromParent];
+            }
+            
+            if (_ghost.position.x - nodePosition.x < 150 && _ghost.position.x - nodePosition.x>0) {
+                [_ghost removeFromParent];
             }
             
         }
@@ -444,6 +469,7 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
             
         }
     }];
+    
         
     
     
@@ -490,7 +516,7 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:backgroundImageName normalMapped:NO];
         //background.lightingBitMask = 0x1 << 31;
         background.size = self.frame.size;
-        background.position = CGPointMake(currentBackgroundX,70);
+        background.position = CGPointMake(currentBackgroundX,90);
         background.name = @"background";
         [backgroundLayer addChild:background];
         currentBackgroundX += background.frame.size.width;
