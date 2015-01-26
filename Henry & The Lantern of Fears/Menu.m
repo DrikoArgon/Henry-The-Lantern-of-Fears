@@ -11,26 +11,34 @@
 #import "GameViewController.h"
 
 @implementation Menu
-
+{
+    SKLabelNode *_label;
+    SKLabelNode *_carregandoLabel;
+}
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         
-        // 1
         self.backgroundColor = [UIColor redColor];
+
+        _label = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
+        _label.text = @"Start";
+        _label.fontSize = 30;
+        _label.position = CGPointMake(self.frame.size.width * 0.5, self.frame.size.height *0.5);
+        _label.name = @"start";
         
-        SKLabelNode *label = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
-        label.text = @"Start";
-        label.fontSize = 30;
-        label.position = CGPointMake(100, 100);
-        label.name = @"start";
+        //SKLabelNode *label = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
+        //label.text = @"Start";
+        //label.fontSize = 30;
+        //label.position = CGPointMake(100, 100);
+        //label.name = @"start";
         
-        [self addChild:label];
-        [self animateWithPulse:label];
+        [self addChild:_label];
+        [self animateWithPulse:_label];
         
-        SKAction *disappear = [SKAction fadeAlphaTo:0.0 duration:0.3];
-        SKAction *appear = [SKAction fadeAlphaTo:1.0 duration:0.3];
-        SKAction *pulse = [SKAction sequence:@[disappear,appear]];
-        [label runAction:[SKAction repeatActionForever:pulse]];
+        //SKAction *disappear = [SKAction fadeAlphaTo:0.0 duration:0.3];
+        //SKAction *appear = [SKAction fadeAlphaTo:1.0 duration:0.3];
+        //SKAction *pulse = [SKAction sequence:@[disappear,appear]];
+        //[_label runAction:[SKAction repeatActionForever:pulse]];
         
         
 //        //2
@@ -66,12 +74,31 @@
     return self;
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    for (UITouch *touch in touches) {
+        SKNode *n = [self nodeAtPoint:[touch locationInNode:self]];
+        if([n.name isEqualToString:@"start"])
+        {
+            _label.hidden = YES;
+            _carregandoLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
+            _carregandoLabel.text = @"Carregando...";
+            _carregandoLabel.fontSize = 30;
+            _carregandoLabel.position = CGPointMake(self.frame.size.width * 0.5, self.frame.size.height *0.5);
+            _carregandoLabel.name = @"carregando";
+            
+            [self addChild:_carregandoLabel];
+        }
+    }
+}
+
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     for (UITouch *touch in touches) {
         SKNode *n = [self nodeAtPoint:[touch locationInNode:self]];
         if([n.name isEqualToString:@"start"]){
             NSLog(@"entrou");
+            
             
             GameScene *scene = [[GameScene alloc] initWithSize:self.view.bounds.size];
 //            scene.size = skView.frame.size;
@@ -91,7 +118,7 @@
     SKAction *disappear = [SKAction fadeAlphaTo:0.0 duration:0.3];
     SKAction *appear = [SKAction fadeAlphaTo:1.0 duration:0.3];
     SKAction *pulse = [SKAction sequence:@[disappear,appear]];
-    [node runAction:[SKAction repeatActionForever:pulse]];
+    [node runAction:[SKAction repeatActionForever:pulse] withKey:@"pulse"];
 }
 
 //- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
