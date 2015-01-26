@@ -93,19 +93,20 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
  ///////////////////////////////////////////////////////////Inserting Objects//////////////////////////////////////////////////////////////
     
     //Inserting Ground
-    SKSpriteNode *ground = [SKSpriteNode spriteNodeWithColor:[UIColor greenColor] size:CGSizeMake(self.frame.size.width, 100)];
-    ground.position = CGPointMake(100, -self.frame.size.height * 0.5 + ground.frame.size.height * 0.5);
-    ground.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:ground.size];
+    SKSpriteNode *ground = [SKSpriteNode spriteNodeWithImageNamed:@"ground"];
+    ground.size = CGSizeMake(self.frame.size.width , 100);
+    ground.position = CGPointMake(60, -self.frame.size.height * 0.5 + ground.frame.size.height * 0.5);
+    ground.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.frame.size.width , 50)];
     ground.physicsBody.dynamic = NO;
     ground.physicsBody.categoryBitMask = GROUND_CATEGORY;
     [_world addChild:ground];
     
-    SKSpriteNode *ground2 = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(self.frame.size.width , 100)];
-    ground2.position = CGPointMake(ground.frame.size.width, -self.frame.size.height * 0.5 + ground2.frame.size.height * 0.5);
-    ground2.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:ground2.size];
-    ground2.physicsBody.dynamic = NO;
-    ground2.physicsBody.categoryBitMask = GROUND_CATEGORY;
-    [_world addChild:ground2];
+//    SKSpriteNode *ground2 = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(self.frame.size.width , 100)];
+//    ground2.position = CGPointMake(ground.frame.size.width, -self.frame.size.height * 0.5 + ground2.frame.size.height * 0.5);
+//    ground2.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:ground2.size];
+//    ground2.physicsBody.dynamic = NO;
+//    ground2.physicsBody.categoryBitMask = GROUND_CATEGORY;
+//    [_world addChild:ground2];
     
    //Creating Background
     [self generateBackgroundIn:_backgroundMountainLayer withImage:@"backgroundMountain" repeat:10];
@@ -494,9 +495,6 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
         [backgroundLayer addChild:background];
         currentBackgroundX += background.frame.size.width;
     }
-    
-   
-    
     
 }
 

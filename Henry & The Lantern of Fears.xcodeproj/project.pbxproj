@@ -43,6 +43,7 @@
 		3BA8DEDF1A768A1700740706 /* backgroundTrees2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA8DEDE1A768A1700740706 /* backgroundTrees2.png */; };
 		3BA8DEE11A768A4D00740706 /* backgroundTrees.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA8DEE01A768A4D00740706 /* backgroundTrees.png */; };
 		3BA8DEE31A768AB000740706 /* backgroundMountain.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA8DEE21A768AB000740706 /* backgroundMountain.png */; };
+		3BA8DEE71A769A3A00740706 /* ground.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA8DEE61A769A3A00740706 /* ground.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		3BA8DEDE1A768A1700740706 /* backgroundTrees2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundTrees2.png; sourceTree = "<group>"; };
 		3BA8DEE01A768A4D00740706 /* backgroundTrees.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundTrees.png; sourceTree = "<group>"; };
 		3BA8DEE21A768AB000740706 /* backgroundMountain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundMountain.png; sourceTree = "<group>"; };
+		3BA8DEE61A769A3A00740706 /* ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 		2540F8191A71467A00AB4625 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3BA8DEE61A769A3A00740706 /* ground.png */,
 				250628011A75F8C000325CEE /* nightForestMusic.mp3 */,
 				250628031A75F8C400325CEE /* nightForestSound.mp3 */,
 				250627C81A75BA2C00325CEE /* Buttons and HUD */,
@@ -360,6 +363,7 @@
 				25FCDB531A72746800B842F2 /* x.png in Resources */,
 				250627AE1A75715B00325CEE /* idle2.png in Resources */,
 				2540F8241A71467A00AB4625 /* GameScene.sks in Resources */,
+				3BA8DEE71A769A3A00740706 /* ground.png in Resources */,
 				250627BA1A7579BD00325CEE /* run3.png in Resources */,
 				250627BC1A7579C200325CEE /* run4.png in Resources */,
 				25FCDB4F1A717BF000B842F2 /* leftButton.png in Resources */,
