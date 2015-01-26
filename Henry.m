@@ -58,15 +58,9 @@
     
     [self runAction:incrementLeft withKey:@"walkLeft"];
 }
--(void)jump:(BOOL)moving isFlipped:(BOOL)flipped
+-(void)jump
 {
-    if (moving) {
-        
-        if (flipped) {
-            [self.physicsBody applyImpulse:CGVectorMake(-30, 10)];
-        }
-        [self.physicsBody applyImpulse:CGVectorMake(30, 10)];
-    }
+
     [self.physicsBody applyImpulse:CGVectorMake(0, 100)];
     
     
