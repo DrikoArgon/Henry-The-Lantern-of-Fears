@@ -95,20 +95,7 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
  ///////////////////////////////////////////////////////////Inserting Objects//////////////////////////////////////////////////////////////
     
     //Inserting Ground
-    SKSpriteNode *ground = [SKSpriteNode spriteNodeWithImageNamed:@"ground"];
-    ground.size = CGSizeMake(self.frame.size.width , 100);
-    ground.position = CGPointMake(60, -self.frame.size.height * 0.5 + ground.frame.size.height * 0.5);
-    ground.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.frame.size.width , 50)];
-    ground.physicsBody.dynamic = NO;
-    ground.physicsBody.categoryBitMask = GROUND_CATEGORY;
-    [_world addChild:ground];
-    
-//    SKSpriteNode *ground2 = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(self.frame.size.width , 100)];
-//    ground2.position = CGPointMake(ground.frame.size.width, -self.frame.size.height * 0.5 + ground2.frame.size.height * 0.5);
-//    ground2.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:ground2.size];
-//    ground2.physicsBody.dynamic = NO;
-//    ground2.physicsBody.categoryBitMask = GROUND_CATEGORY;
-//    [_world addChild:ground2];
+    [self generateWorldWithImage:@"ground" repeat:4];
     
    //Creating Background
     [self generateBackgroundIn:_backgroundMountainLayer withImage:@"backgroundMountain" repeat:10];
@@ -499,6 +486,29 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
     _backgroundMountainLayer.position = CGPointMake(_backgroundMountainLayer.position.x - positionInScene.x * 0.1,
                                                  _backgroundMountainLayer.position.y);
 
+    
+}
+
+-(void)generateWorldWithImage:(NSString *)groundImageName repeat:(int)times
+{
+    
+    CGFloat currentGroundX = 0;
+    if([groundImageName isEqualToString:@"ground"]){
+        
+        for (int i = 0; i < times; i++) {
+            SKSpriteNode *ground = [SKSpriteNode spriteNodeWithImageNamed:@"ground"];
+            ground.size = CGSizeMake(self.frame.size.width , 100);
+            ground.position = CGPointMake(currentGroundX, -self.frame.size.height * 0.5 + ground.frame.size.height * 0.5);
+            ground.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.frame.size.width , 50)];
+            ground.physicsBody.dynamic = NO;
+            ground.physicsBody.categoryBitMask = GROUND_CATEGORY;
+            [_world addChild:ground];
+            currentGroundX += ground.frame.size.width;
+        }
+        
+        
+    }
+    
     
 }
 
