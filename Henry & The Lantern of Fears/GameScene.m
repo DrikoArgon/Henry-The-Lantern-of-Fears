@@ -95,9 +95,20 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
  ///////////////////////////////////////////////////////////Inserting Objects//////////////////////////////////////////////////////////////
     
     //Inserting Ground
+    SKSpriteNode *ground = [SKSpriteNode spriteNodeWithImageNamed:@"ground"];
+    ground.size = CGSizeMake(self.frame.size.width , 100);
+    ground.position = CGPointMake(60, -self.frame.size.height * 0.5 + ground.frame.size.height * 0.5);
+    ground.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.frame.size.width , 50)];
+    ground.physicsBody.dynamic = NO;
+    ground.physicsBody.categoryBitMask = GROUND_CATEGORY;
+    [_world addChild:ground];
     
-    [self generateWorldWithImage:@"ground" repeat:4];
-    
+//    SKSpriteNode *ground2 = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(self.frame.size.width , 100)];
+//    ground2.position = CGPointMake(ground.frame.size.width, -self.frame.size.height * 0.5 + ground2.frame.size.height * 0.5);
+//    ground2.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:ground2.size];
+//    ground2.physicsBody.dynamic = NO;
+//    ground2.physicsBody.categoryBitMask = GROUND_CATEGORY;
+//    [_world addChild:ground2];
     
    //Creating Background
     [self generateBackgroundIn:_backgroundMountainLayer withImage:@"backgroundMountain" repeat:10];
@@ -291,9 +302,7 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
 
             if(!_jumping){
                 _jumping = YES;
-                
-                [_henry jump];
-                
+                [_henry jump:_moving isFlipped:_flipped];
             }
         }
         else if([n.name isEqualToString:@"lanternButton"]){
@@ -319,23 +328,21 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    for (UITouch *touch in touches) {
-        
-    SKNode *n = [_HUD nodeAtPoint:[touch locationInNode:_HUD]];
-
-        if ([n.name isEqualToString:@"rightButton"]) {
+    
+    if (!_jumping) {
+        if (_rightButtonPressed) {
             _rightButtonPressed = NO;
             _moving = NO;
             [_henry removeActionForKey:@"walkRight"];
             [_henry idleAnimation];
         }
-        if ([n.name isEqualToString:@"leftButton"]) {
+        if (_leftButtonPressed) {
             _leftButtonPressed = NO;
             _moving = NO;
             [_henry idleAnimation];
             [_henry removeActionForKey:@"walkLeft"];
         }
-        if([n.name isEqualToString:@"lanternButton"]){
+        if(_lanternLit){
             _lanternLit = NO;
             [_henry enumerateChildNodesWithName:@"lanternLightParticle" usingBlock:^(SKNode *node, BOOL *stop) {
                 [node removeFromParent];
@@ -346,10 +353,11 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
             [_henry enumerateChildNodesWithName:@"fakeLanternLight" usingBlock:^(SKNode *node, BOOL *stop) {
                 [node removeFromParent];
             }];
-        }
+    }
         
-    };
-    
+   
+        
+    }
 }
 -(void)gameOver
 {
@@ -406,7 +414,6 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
     if(firstBody.categoryBitMask == GROUND_CATEGORY && secondBody.categoryBitMask == PLAYER_CATEGORY)
     {
         _jumping = NO;
-        
     }
     else if(firstBody.categoryBitMask == PLAYER_CATEGORY && secondBody.categoryBitMask == ENEMY_CATEGORY){
         [_henry removeFromParent];
@@ -509,34 +516,13 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:backgroundImageName normalMapped:NO];
         //background.lightingBitMask = 0x1 << 31;
         background.size = self.frame.size;
-        background.position = CGPointMake(currentBackgroundX,80);
+        background.position = CGPointMake(currentBackgroundX,90);
         background.name = @"background";
         [backgroundLayer addChild:background];
         currentBackgroundX += background.frame.size.width;
     }
     
 }
--(void)generateWorldWithImage:(NSString *)groundImageName repeat:(int)times
-{
-    
-    CGFloat currentGroundX = 0;
-    if([groundImageName isEqualToString:@"ground"]){
-    
-        for (int i = 0; i < times; i++) {
-            SKSpriteNode *ground = [SKSpriteNode spriteNodeWithImageNamed:@"ground"];
-            ground.size = CGSizeMake(self.frame.size.width , 100);
-            ground.position = CGPointMake(currentGroundX, -self.frame.size.height * 0.5 + ground.frame.size.height * 0.5);
-            ground.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.frame.size.width , 50)];
-            ground.physicsBody.dynamic = NO;
-            ground.physicsBody.categoryBitMask = GROUND_CATEGORY;
-            [_world addChild:ground];
-            currentGroundX += ground.frame.size.width;
-        }
-        
-        
-    }
-    
-    
-}
+
 
 @end
