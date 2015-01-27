@@ -25,7 +25,7 @@
         label.name = @"start";
         
         [self addChild:label];
-        [self animateWithPulse: label];
+        [self animateWithPulse:label];
         
     }
     return self;
@@ -33,16 +33,12 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of 398d512... Tela 1 e Tela 2 modificadas
+<<<<<<< Updated upstream
     for (UITouch *touch in touches) {
         SKNode *n = [self nodeAtPoint:[touch locationInNode:self]];
         if([n.name isEqualToString:@"start"]){
             NSLog(@"mundou pro mundo");
-<<<<<<< HEAD
-
+=======
     NSLog(@"entrou1");
     for(UITouch *touch in touches)
       {
@@ -53,9 +49,7 @@
             
             NSLog(@"entrou3");
             
-
-=======
->>>>>>> parent of 398d512... Tela 1 e Tela 2 modificadas
+>>>>>>> Stashed changes
             
             Mundos *scene = [[Mundos alloc] initWithSize:self.view.bounds.size];
 //            scene.size = skView.frame.size;
@@ -69,6 +63,7 @@
         }
     }
 }
+
 -(void)animateWithPulse:(SKNode *)node
 {
     SKAction *disappear = [SKAction fadeAlphaTo:0.0 duration:0.3];
@@ -76,9 +71,13 @@
     SKAction *pulse = [SKAction sequence:@[disappear,appear]];
     [node runAction:[SKAction repeatActionForever:pulse]];
 }
-<<<<<<< HEAD
-    
+
+<<<<<<< Updated upstream
 =======
 
->>>>>>> parent of 398d512... Tela 1 e Tela 2 modificadas
+
+>>>>>>> Stashed changes
 @end
+
+
+
