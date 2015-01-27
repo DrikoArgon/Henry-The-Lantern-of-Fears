@@ -289,7 +289,7 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
 
             if(!_jumping){
                 _jumping = YES;
-                [_henry jump:_moving isFlipped:_flipped];
+                [_henry jump];
             }
         }
         else if([n.name isEqualToString:@"lanternButton"]){
@@ -315,21 +315,23 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
-    if (!_jumping) {
-        if (_rightButtonPressed) {
+    for (UITouch *touch in touches) {
+        
+        SKNode *n = [_HUD nodeAtPoint:[touch locationInNode:_HUD]];
+        
+        if ([n.name isEqualToString:@"rightButton"]) {
             _rightButtonPressed = NO;
             _moving = NO;
             [_henry removeActionForKey:@"walkRight"];
             [_henry idleAnimation];
         }
-        if (_leftButtonPressed) {
+        if ([n.name isEqualToString:@"leftButton"]) {
             _leftButtonPressed = NO;
             _moving = NO;
             [_henry idleAnimation];
             [_henry removeActionForKey:@"walkLeft"];
         }
-        if(_lanternLit){
+        if([n.name isEqualToString:@"lanternButton"]){
             _lanternLit = NO;
             [_henry enumerateChildNodesWithName:@"lanternLightParticle" usingBlock:^(SKNode *node, BOOL *stop) {
                 [node removeFromParent];
@@ -340,12 +342,13 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
             [_henry enumerateChildNodesWithName:@"fakeLanternLight" usingBlock:^(SKNode *node, BOOL *stop) {
                 [node removeFromParent];
             }];
-    }
+        }
         
-   
-        
-    }
+    };
+    
 }
+                             
+
 -(void)gameOver
 {
     _isGameOver = YES;
@@ -526,7 +529,7 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:backgroundImageName normalMapped:NO];
         //background.lightingBitMask = 0x1 << 31;
         background.size = self.frame.size;
-        background.position = CGPointMake(currentBackgroundX,90);
+        background.position = CGPointMake(currentBackgroundX,70);
         background.name = @"background";
         [backgroundLayer addChild:background];
         currentBackgroundX += background.frame.size.width;
