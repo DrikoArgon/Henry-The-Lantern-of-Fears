@@ -19,7 +19,7 @@
 {
     
     Henry *henry = [Henry spriteNodeWithImageNamed:@"idle1"];
-    henry.size = CGSizeMake(41, 100);
+    henry.size = CGSizeMake(60, 100);
     henry.zPosition=1;
 
     SKSpriteNode *lightBlocker = [SKSpriteNode spriteNodeWithColor:[UIColor grayColor] size:CGSizeMake(1,40)];
@@ -109,7 +109,7 @@
 -(void)idleAnimation
 {
     
-    SKAction *idleAnimation = [SKAction repeatActionForever:[SKAction animateWithTextures:@[[SKTexture textureWithImageNamed:@"idle1"],[SKTexture textureWithImageNamed:@"idle2"],[SKTexture textureWithImageNamed:@"idle1"],[SKTexture textureWithImageNamed:@"idle4"]] timePerFrame:0.2]];
+    SKAction *idleAnimation = [SKAction repeatActionForever:[SKAction animateWithTextures:@[[SKTexture textureWithImageNamed:@"idle1"],[SKTexture textureWithImageNamed:@"idle2"]] timePerFrame:1]];
     
     [self runAction:idleAnimation withKey:@"idleAnimation"];
     
