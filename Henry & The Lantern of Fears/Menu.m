@@ -33,10 +33,23 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+<<<<<<< Updated upstream
     for (UITouch *touch in touches) {
         SKNode *n = [self nodeAtPoint:[touch locationInNode:self]];
         if([n.name isEqualToString:@"start"]){
             NSLog(@"mundou pro mundo");
+=======
+    NSLog(@"entrou1");
+    for(UITouch *touch in touches)
+      {
+          SKNode *n = [self nodeAtPoint:[touch locationInNode:self]];
+          NSLog(@"entrou2");
+          if ([n.name isEqualToString:(@"start")])
+        {
+            
+            NSLog(@"entrou3");
+            
+>>>>>>> Stashed changes
             
             Mundos *scene = [[Mundos alloc] initWithSize:self.view.bounds.size];
 //            scene.size = skView.frame.size;
@@ -59,6 +72,11 @@
     [node runAction:[SKAction repeatActionForever:pulse]];
 }
 
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 @end
 
 
