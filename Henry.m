@@ -62,7 +62,7 @@
 -(void)jump
 {
     
-    [self.physicsBody applyImpulse:CGVectorMake(0, 150)];
+    [self.physicsBody applyImpulse:CGVectorMake(0, 100)];
     
     
 }
@@ -109,7 +109,7 @@
 -(void)idleAnimation
 {
     
-    SKAction *idleAnimation = [SKAction repeatActionForever:[SKAction animateWithTextures:@[[SKTexture textureWithImageNamed:@"idle1"],[SKTexture textureWithImageNamed:@"idle2"],[SKTexture textureWithImageNamed:@"idle1"]] timePerFrame:1]];
+    SKAction *idleAnimation = [SKAction repeatActionForever:[SKAction animateWithTextures:@[[SKTexture textureWithImageNamed:@"idle1"],[SKTexture textureWithImageNamed:@"idle2"]] timePerFrame:1]];
     
     [self runAction:idleAnimation withKey:@"idleAnimation"];
     

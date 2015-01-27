@@ -344,7 +344,6 @@ static const uint32_t LIGHT_CATEGORY = 0x1 << 31;
             }];
         }
         
-        
     };
     
 }
