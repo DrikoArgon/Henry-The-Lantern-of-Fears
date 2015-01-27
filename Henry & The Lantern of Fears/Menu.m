@@ -33,11 +33,15 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 398d512... Tela 1 e Tela 2 modificadas
     for (UITouch *touch in touches) {
         SKNode *n = [self nodeAtPoint:[touch locationInNode:self]];
         if([n.name isEqualToString:@"start"]){
             NSLog(@"mundou pro mundo");
+<<<<<<< HEAD
 
     NSLog(@"entrou1");
     for(UITouch *touch in touches)
@@ -50,6 +54,8 @@
             NSLog(@"entrou3");
             
 
+=======
+>>>>>>> parent of 398d512... Tela 1 e Tela 2 modificadas
             
             Mundos *scene = [[Mundos alloc] initWithSize:self.view.bounds.size];
 //            scene.size = skView.frame.size;
@@ -70,5 +76,9 @@
     SKAction *pulse = [SKAction sequence:@[disappear,appear]];
     [node runAction:[SKAction repeatActionForever:pulse]];
 }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> parent of 398d512... Tela 1 e Tela 2 modificadas
 @end
