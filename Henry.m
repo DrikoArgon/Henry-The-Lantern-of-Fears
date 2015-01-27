@@ -19,8 +19,7 @@
 {
     
     Henry *henry = [Henry spriteNodeWithImageNamed:@"idle1"];
-    henry.size = CGSizeMake(41, 100);
-    henry.zPosition=1;
+    henry.size = CGSizeMake(54, 80);
 
     SKSpriteNode *lightBlocker = [SKSpriteNode spriteNodeWithColor:[UIColor grayColor] size:CGSizeMake(1,40)];
     lightBlocker.zPosition = -10;
@@ -59,9 +58,15 @@
     
     [self runAction:incrementLeft withKey:@"walkLeft"];
 }
--(void)jump
+-(void)jump:(BOOL)moving isFlipped:(BOOL)flipped
 {
-    
+    if (moving) {
+        
+        if (flipped) {
+            [self.physicsBody applyImpulse:CGVectorMake(-30, 10)];
+        }
+        [self.physicsBody applyImpulse:CGVectorMake(30, 10)];
+    }
     [self.physicsBody applyImpulse:CGVectorMake(0, 100)];
     
     
